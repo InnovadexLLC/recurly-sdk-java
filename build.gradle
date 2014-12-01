@@ -43,12 +43,15 @@ buildscript {
 apply plugin: 'release'
 
 dependencies {
-    if (project.hasProperty("VERSION")) {
-       compile 'com.sciul:sci-sdk-java:1.0.0-SNAPSHOT' 
-       // if you want to use central sdk pass -PVERSIONNUMBER=n while building the project.
-    }else{
-       compile files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.0.0-SNAPSHOT.jar')
-       //This is for local build only.
+    def sdk = files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.0.1-SNAPSHOT.jar')
+    sdk.each { file ->
+        if (!file.exists()) {
+            println 'Getting the file from CENTRAL Repo !'
+            compile 'com.sciul:sci-sdk-java:1.0.0-SNAPSHOT'
+        }else{
+           println 'Getting the file from LOCAL Repo !'
+           compile sdk
+        }
     }
     compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
     compile 'org.springframework:spring-context:4.0.6.RELEASE'

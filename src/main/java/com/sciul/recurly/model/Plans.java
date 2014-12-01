@@ -1706,7 +1706,7 @@ public class Plans {
      * <pre>
      * &lt;complexType>
      *   &lt;simpleContent>
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>byte">
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>Integer">
      *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
      *     &lt;/extension>
      *   &lt;/simpleContent>
@@ -1720,7 +1720,7 @@ public class Plans {
     public static class PlanIntervalLength {
 
       @XmlValue
-      protected byte value;
+      protected Integer value;
       @XmlAttribute(name = "type")
       protected String type;
 
@@ -1728,7 +1728,7 @@ public class Plans {
        * Gets the value of the value property.
        * 
        */
-      public byte getValue() {
+      public Integer getValue() {
         return value;
       }
 
@@ -1736,7 +1736,7 @@ public class Plans {
        * Sets the value of the value property.
        * 
        */
-      public void setValue(byte value) {
+      public void setValue(Integer value) {
         this.value = value;
       }
 
