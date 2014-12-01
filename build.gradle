@@ -44,10 +44,10 @@ apply plugin: 'release'
 
 dependencies {
     if (project.hasProperty("VERSION")) {
-       compile 'com.sciul:sci-sdk-java:1.10-SNAPSHOT' 
+       compile 'com.sciul:sci-sdk-java:1.0.0-SNAPSHOT' 
        // if you want to use central sdk pass -PVERSIONNUMBER=n while building the project.
     }else{
-       compile files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.10-SNAPSHOT.jar')
+       compile files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.0.0-SNAPSHOT.jar')
        //This is for local build only.
     }
     compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
