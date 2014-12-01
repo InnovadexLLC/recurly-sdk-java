@@ -13,16 +13,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 
 import com.sciul.recurly.config.RecurlyConfiguration;
+import com.sciul.recurly.helper.BillingConstants;
+import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.Plans;
 import com.sciul.recurly.model.Plans.Plan;
-import com.sciul.recurly.model.Plans.Plan.BypassHostedConfirmation;
-import com.sciul.recurly.model.Plans.Plan.PlanIntervalLength;
-import com.sciul.recurly.model.Plans.Plan.SetupFeeInCents;
-import com.sciul.recurly.model.Plans.Plan.SuccessUrl;
-import com.sciul.recurly.model.Plans.Plan.TaxExempt;
-import com.sciul.recurly.model.Plans.Plan.TotalBillingCycles;
-import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents;
-import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents.USD;
 import com.sciul.sdk.helper.RestWsUtils;
 
 /**
@@ -38,6 +32,9 @@ public class PlansServiceImpl implements PlansService {
 
   @Autowired
   private RecurlyConfiguration recurly;
+
+  @Autowired
+  private BillingHelper billingHelper;
 
   // @Value("${recurly.apiKey}")
   // private String apiKey;
@@ -74,45 +71,16 @@ public class PlansServiceImpl implements PlansService {
   }
 
   @Override
-  public Plan createOneTimeTransactionPlan(String id, Integer priceInCents, String successURL) {
+  public Plan createOneTimeTransactionPlan(String planName, Integer priceInCents, String successURL) {
     Plan plan = new Plan();
-    plan.setPlanCode(id);
-    plan.setName(id);
-
-    PlanIntervalLength interval = new PlanIntervalLength();
-    interval.setType("Integer");
-    interval.setValue((byte) 1);
-    plan.setPlanIntervalLength(interval);
-    plan.setPlanIntervalUnit("days");
-    SuccessUrl s = new SuccessUrl();
-    s.setValue(successURL);
-    plan.setSuccessUrl(s);
-
-    BypassHostedConfirmation b = new BypassHostedConfirmation();
-    b.setType("boolean");
-    b.setValue("true");
-    plan.setBypassHostedConfirmation(b);
-
-    UnitAmountInCents amount = new UnitAmountInCents();
-    USD usd = new USD();
-    usd.setValue(0);
-    amount.setUSD(usd);
-    plan.setUnitAmountInCents(amount);
-
-    SetupFeeInCents setupFee = new SetupFeeInCents();
-    com.sciul.recurly.model.Plans.Plan.SetupFeeInCents.USD usd1 =
-          new com.sciul.recurly.model.Plans.Plan.SetupFeeInCents.USD();
-    usd1.setValue(priceInCents);
-    setupFee.setUSD(usd1);
-    plan.setSetupFeeInCents(setupFee);
-
-    TotalBillingCycles cycles = new TotalBillingCycles();
-    cycles.setValue("1");
-    plan.setTotalBillingCycles(cycles);
-
-    TaxExempt t = new TaxExempt();
-    t.setValue("false");
-    plan.setTaxExempt(t);
+    billingHelper.setPlanCodeName(plan, planName, planName);
+    billingHelper.setPlanInterval(plan, 1, BillingConstants.PLAN_INTERVAL_DAYS);
+    billingHelper.setSuccessURL(plan, successURL);
+    billingHelper.setBypassHostedConfirmation(plan, true);
+    billingHelper.setUnitAmountInCents(plan, true, false, 0, 0);
+    billingHelper.setSetupFee(plan, true, false, priceInCents, 0);
+    billingHelper.setTotalBillingCycles(plan, 1);
+    billingHelper.setTaxExempt(plan, false);
 
     Plan p = createPlan(plan);
     return p;
