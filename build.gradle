@@ -8,7 +8,7 @@ def versionN ="";
 if (project.hasProperty("VERSION")) {  
     versionN = "$VERSION"
 } else {
-    versionN = '1.0.0'
+    versionN = '1.0.1'
 }
 
 sourceCompatibility = 1.7
