@@ -1,5 +1,7 @@
 package com.sciul.recurly.helper;
 
+import org.springframework.stereotype.Component;
+
 import com.sciul.recurly.model.Plans.Plan;
 import com.sciul.recurly.model.Plans.Plan.BypassHostedConfirmation;
 import com.sciul.recurly.model.Plans.Plan.PlanIntervalLength;
@@ -11,6 +13,7 @@ import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents;
 import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents.EUR;
 import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents.USD;
 
+@Component
 public class BillingHelper {
 
   public void setPlanInterval(Plan plan, Integer planIntervalLength, String planIntervalUnit) {

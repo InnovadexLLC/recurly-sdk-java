@@ -46,10 +46,10 @@ dependencies {
     def sdk = files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.0.1-SNAPSHOT.jar')
     sdk.each { file ->
         if (!file.exists()) {
-            println 'Getting the file from CENTRAL Repo !'
+            println 'Getting the SDK jar from CENTRAL Repo.'
             compile 'com.sciul:sci-sdk-java:1.0.0-SNAPSHOT'
         }else{
-           println 'Getting the file from LOCAL Repo !'
+           println 'Getting the SDK jar from LOCAL Repo.'
            compile sdk
         }
     }
