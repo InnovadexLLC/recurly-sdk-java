@@ -168,12 +168,12 @@ uploadArchives {
                name 'recurly-sdk-java'
                packaging 'jar'
                description 'SDK Classes to build Recurly Java app.'
-               url 'https://github.com/ulini/sci-sdk-java'
+               url 'https://github.com/ulini/recurly-sdk-java'
 
                scm {
-                   url 'scm:git@github.com:ulini/sci-sdk-java.git'
-                   connection 'scm:git@github.com:ulini/sci-sdk-java.git'
-                   developerConnection 'scm:git@github.com:ulini/sci-sdk-java.git'
+                   url 'scm:git@github.com:ulini/recurly-sdk-java.git'
+                   connection 'scm:git@github.com:ulini/recurly-sdk-java.git'
+                   developerConnection 'scm:git@github.com:ulini/recurly-sdk-java.git'
                }
 
                licenses {
