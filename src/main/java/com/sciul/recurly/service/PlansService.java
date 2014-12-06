@@ -10,4 +10,6 @@ public interface PlansService {
   public Plans getPlans();
 
   public Plan createOneTimeTransactionPlan(String id, Integer priceInCents, String successURL);
+
+  String getHostedPaymentPageURL(String planName);
 }

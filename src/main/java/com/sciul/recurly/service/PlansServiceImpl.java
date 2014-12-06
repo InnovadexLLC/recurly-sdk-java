@@ -61,9 +61,10 @@ public class PlansServiceImpl implements PlansService {
       logger.debug("RecurllyServerURL::::{}", recurly.getRecurllyServerURL());
       logger.debug("RecurllyHeaders::::{}", plan.toString());
 
-      restWsUtils.callRestApiWithHeaders(
-            new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/plans", "UTF-8")), plan, null,
-            HttpMethod.POST, recurly.getRecurllyHeaders());
+      p =
+            restWsUtils.callRestApiWithHeaders(
+                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/plans", "UTF-8")), plan,
+                  Plan.class, HttpMethod.POST, recurly.getRecurllyHeaders());
     } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
     }
@@ -84,5 +85,10 @@ public class PlansServiceImpl implements PlansService {
 
     Plan p = createPlan(plan);
     return p;
+  }
+
+  @Override
+  public String getHostedPaymentPageURL(String planName) {
+    return recurly.getRecurllyServerURL() + "/" + BillingConstants.SUBSCRIBE_URL + "/" + planName;
   }
 }
