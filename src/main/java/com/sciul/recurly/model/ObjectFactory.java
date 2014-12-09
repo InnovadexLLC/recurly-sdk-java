@@ -337,4 +337,428 @@ public class ObjectFactory {
     return new Plans.Plan.UnitAmountInCents.EUR();
   }
 
+  /**
+   * Create an instance of {@link Subscriptions }
+   * 
+   */
+  public Subscriptions createSubscriptions() {
+    return new Subscriptions();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription }
+   * 
+   */
+  public Subscriptions.Subscription createSubscriptionsSubscription() {
+    return new Subscriptions.Subscription();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.SubscriptionAddOns }
+   * 
+   */
+  public Subscriptions.Subscription.SubscriptionAddOns createSubscriptionsSubscriptionSubscriptionAddOns() {
+    return new Subscriptions.Subscription.SubscriptionAddOns();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.Account }
+   * 
+   */
+  public Subscriptions.Subscription.Account createSubscriptionsSubscriptionAccount() {
+    return new Subscriptions.Subscription.Account();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.Invoice }
+   * 
+   */
+  public Subscriptions.Subscription.Invoice createSubscriptionsSubscriptionInvoice() {
+    return new Subscriptions.Subscription.Invoice();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.Plan }
+   * 
+   */
+  public Subscriptions.Subscription.Plan createSubscriptionsSubscriptionPlan() {
+    return new Subscriptions.Subscription.Plan();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.UnitAmountInCents }
+   * 
+   */
+  public Subscriptions.Subscription.UnitAmountInCents createSubscriptionsSubscriptionUnitAmountInCents() {
+    return new Subscriptions.Subscription.UnitAmountInCents();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.Quantity }
+   * 
+   */
+  public Subscriptions.Subscription.Quantity createSubscriptionsSubscriptionQuantity() {
+    return new Subscriptions.Subscription.Quantity();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.ActivatedAt }
+   * 
+   */
+  public Subscriptions.Subscription.ActivatedAt createSubscriptionsSubscriptionActivatedAt() {
+    return new Subscriptions.Subscription.ActivatedAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.CanceledAt }
+   * 
+   */
+  public Subscriptions.Subscription.CanceledAt createSubscriptionsSubscriptionCanceledAt() {
+    return new Subscriptions.Subscription.CanceledAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.ExpiresAt }
+   * 
+   */
+  public Subscriptions.Subscription.ExpiresAt createSubscriptionsSubscriptionExpiresAt() {
+    return new Subscriptions.Subscription.ExpiresAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.CurrentPeriodStartedAt }
+   * 
+   */
+  public Subscriptions.Subscription.CurrentPeriodStartedAt createSubscriptionsSubscriptionCurrentPeriodStartedAt() {
+    return new Subscriptions.Subscription.CurrentPeriodStartedAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.CurrentPeriodEndsAt }
+   * 
+   */
+  public Subscriptions.Subscription.CurrentPeriodEndsAt createSubscriptionsSubscriptionCurrentPeriodEndsAt() {
+    return new Subscriptions.Subscription.CurrentPeriodEndsAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.TrialStartedAt }
+   * 
+   */
+  public Subscriptions.Subscription.TrialStartedAt createSubscriptionsSubscriptionTrialStartedAt() {
+    return new Subscriptions.Subscription.TrialStartedAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.TrialEndsAt }
+   * 
+   */
+  public Subscriptions.Subscription.TrialEndsAt createSubscriptionsSubscriptionTrialEndsAt() {
+    return new Subscriptions.Subscription.TrialEndsAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.TaxInCents }
+   * 
+   */
+  public Subscriptions.Subscription.TaxInCents createSubscriptionsSubscriptionTaxInCents() {
+    return new Subscriptions.Subscription.TaxInCents();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.TaxRate }
+   * 
+   */
+  public Subscriptions.Subscription.TaxRate createSubscriptionsSubscriptionTaxRate() {
+    return new Subscriptions.Subscription.TaxRate();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.PoNumber }
+   * 
+   */
+  public Subscriptions.Subscription.PoNumber createSubscriptionsSubscriptionPoNumber() {
+    return new Subscriptions.Subscription.PoNumber();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.NetTerms }
+   * 
+   */
+  public Subscriptions.Subscription.NetTerms createSubscriptionsSubscriptionNetTerms() {
+    return new Subscriptions.Subscription.NetTerms();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.A }
+   * 
+   */
+  public Subscriptions.Subscription.A createSubscriptionsSubscriptionA() {
+    return new Subscriptions.Subscription.A();
+  }
+
+  /**
+   * Create an instance of {@link Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn }
+   * 
+   */
+  public Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn
+        createSubscriptionsSubscriptionSubscriptionAddOnsSubscriptionAddOn() {
+    return new Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn();
+  }
+
+  /**
+   * Create an instance of {@link Account }
+   * 
+   */
+  public Account createAccount() {
+    return new Account();
+  }
+
+  /**
+   * Create an instance of {@link Account.Address }
+   * 
+   */
+  public Account.Address createAccountAddress() {
+    return new Account.Address();
+  }
+
+  /**
+   * Create an instance of {@link Account.Adjustments }
+   * 
+   */
+  public Account.Adjustments createAccountAdjustments() {
+    return new Account.Adjustments();
+  }
+
+  /**
+   * Create an instance of {@link Account.BillingInfo }
+   * 
+   */
+  public Account.BillingInfo createAccountBillingInfo() {
+    return new Account.BillingInfo();
+  }
+
+  /**
+   * Create an instance of {@link Account.Invoices }
+   * 
+   */
+  public Account.Invoices createAccountInvoices() {
+    return new Account.Invoices();
+  }
+
+  /**
+   * Create an instance of {@link Account.Redemption }
+   * 
+   */
+  public Account.Redemption createAccountRedemption() {
+    return new Account.Redemption();
+  }
+
+  /**
+   * Create an instance of {@link Account.Subscriptions }
+   * 
+   */
+  public Account.Subscriptions createAccountSubscriptions() {
+    return new Account.Subscriptions();
+  }
+
+  /**
+   * Create an instance of {@link Account.Transactions }
+   * 
+   */
+  public Account.Transactions createAccountTransactions() {
+    return new Account.Transactions();
+  }
+
+  /**
+   * Create an instance of {@link Account.Username }
+   * 
+   */
+  public Account.Username createAccountUsername() {
+    return new Account.Username();
+  }
+
+  /**
+   * Create an instance of {@link Account.VatNumber }
+   * 
+   */
+  public Account.VatNumber createAccountVatNumber() {
+    return new Account.VatNumber();
+  }
+
+  /**
+   * Create an instance of {@link Account.TaxExempt }
+   * 
+   */
+  public Account.TaxExempt createAccountTaxExempt() {
+    return new Account.TaxExempt();
+  }
+
+  /**
+   * Create an instance of {@link Account.AcceptLanguage }
+   * 
+   */
+  public Account.AcceptLanguage createAccountAcceptLanguage() {
+    return new Account.AcceptLanguage();
+  }
+
+  /**
+   * Create an instance of {@link Account.CreatedAt }
+   * 
+   */
+  public Account.CreatedAt createAccountCreatedAt() {
+    return new Account.CreatedAt();
+  }
+
+  /**
+   * Create an instance of {@link Account.Address.Address2 }
+   * 
+   */
+  public Account.Address.Address2 createAccountAddressAddress2() {
+    return new Account.Address.Address2();
+  }
+
+  /**
+   * Create an instance of {@link Account.Address.Phone }
+   * 
+   */
+  public Account.Address.Phone createAccountAddressPhone() {
+    return new Account.Address.Phone();
+  }
+
+  /**
+   * Create an instance of {@link Subscription }
+   * 
+   */
+  public Subscription createSubscription() {
+    return new Subscription();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.SubscriptionAddOns }
+   * 
+   */
+  public Subscription.SubscriptionAddOns createSubscriptionSubscriptionAddOns() {
+    return new Subscription.SubscriptionAddOns();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.Account }
+   * 
+   */
+  public Subscription.Account createSubscriptionAccount() {
+    return new Subscription.Account();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.Invoice }
+   * 
+   */
+  public Subscription.Invoice createSubscriptionInvoice() {
+    return new Subscription.Invoice();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.Plan }
+   * 
+   */
+  public Subscription.Plan createSubscriptionPlan() {
+    return new Subscription.Plan();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.UnitAmountInCents }
+   * 
+   */
+  public Subscription.UnitAmountInCents createSubscriptionUnitAmountInCents() {
+    return new Subscription.UnitAmountInCents();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.Quantity }
+   * 
+   */
+  public Subscription.Quantity createSubscriptionQuantity() {
+    return new Subscription.Quantity();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.ActivatedAt }
+   * 
+   */
+  public Subscription.ActivatedAt createSubscriptionActivatedAt() {
+    return new Subscription.ActivatedAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.CanceledAt }
+   * 
+   */
+
+  /**
+   * Create an instance of {@link Subscription.CurrentPeriodStartedAt }
+   * 
+   */
+  public Subscription.CurrentPeriodStartedAt createSubscriptionCurrentPeriodStartedAt() {
+    return new Subscription.CurrentPeriodStartedAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.CurrentPeriodEndsAt }
+   * 
+   */
+  public Subscription.CurrentPeriodEndsAt createSubscriptionCurrentPeriodEndsAt() {
+    return new Subscription.CurrentPeriodEndsAt();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.TrialStartedAt }
+   * 
+   */
+
+  /**
+   * Create an instance of {@link Subscription.TaxInCents }
+   * 
+   */
+  public Subscription.TaxInCents createSubscriptionTaxInCents() {
+    return new Subscription.TaxInCents();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.TaxRate }
+   * 
+   */
+  public Subscription.TaxRate createSubscriptionTaxRate() {
+    return new Subscription.TaxRate();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.PoNumber }
+   * 
+   */
+
+  /**
+   * Create an instance of {@link Subscription.NetTerms }
+   * 
+   */
+  public Subscription.NetTerms createSubscriptionNetTerms() {
+    return new Subscription.NetTerms();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.A }
+   * 
+   */
+  public Subscription.A createSubscriptionA() {
+    return new Subscription.A();
+  }
+
+  /**
+   * Create an instance of {@link Subscription.SubscriptionAddOns.SubscriptionAddOn }
+   * 
+   */
+  public Subscription.SubscriptionAddOns.SubscriptionAddOn createSubscriptionSubscriptionAddOnsSubscriptionAddOn() {
+    return new Subscription.SubscriptionAddOns.SubscriptionAddOn();
+  }
+
 }

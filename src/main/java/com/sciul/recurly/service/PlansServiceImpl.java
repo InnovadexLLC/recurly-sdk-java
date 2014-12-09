@@ -36,9 +36,6 @@ public class PlansServiceImpl implements PlansService {
   @Autowired
   private BillingHelper billingHelper;
 
-  // @Value("${recurly.apiKey}")
-  // private String apiKey;
-
   @Override
   public Plans getPlans() {
     logger.debug("RecurllyServerURL::::{}", "HERE");
@@ -55,6 +52,40 @@ public class PlansServiceImpl implements PlansService {
     return plans;
   }
 
+  @Override
+  public com.sciul.recurly.model.n.Plans getNewPlans() {
+    logger.debug("RecurllyServerURL::::{}", "HERE");
+    com.sciul.recurly.model.n.Plans plans = null;
+    try {
+      logger.debug("RecurllyServerURL::::{}", recurly.getRecurllyServerURL());
+      plans =
+            restWsUtils.callRestApiWithHeaders(
+                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/plans", "UTF-8")), null,
+                  com.sciul.recurly.model.n.Plans.class, HttpMethod.GET, recurly.getRecurllyHeaders());
+    } catch (URIException | URISyntaxException | UnsupportedEncodingException e) {
+      logger.debug("Error!!!!!!!!!!!!!!! {}", e);
+    }
+    return plans;
+  }
+
+  @Override
+  public com.sciul.recurly.model.n.Plan createSubscriptionPlan(com.sciul.recurly.model.n.Plan plan) {
+    com.sciul.recurly.model.n.Plan p = null;
+    try {
+      logger.debug("RecurllyServerURL::::{}", recurly.getRecurllyServerURL());
+      logger.debug("RecurllyHeaders::::{}", plan.toString());
+
+      p =
+            restWsUtils.callRestApiWithHeaders(
+                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/plans", "UTF-8")), plan,
+                  com.sciul.recurly.model.n.Plan.class, HttpMethod.POST, recurly.getRecurllyHeaders());
+    } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
+      logger.debug("Error!!!!!!!!!!!!!!! {}", e);
+    }
+    return p;
+  }
+
+  @Override
   public Plan createPlan(Plan plan) {
     Plan p = null;
     try {
@@ -91,4 +122,5 @@ public class PlansServiceImpl implements PlansService {
   public String getHostedPaymentPageURL(String planName) {
     return recurly.getRecurllyServerURL() + "/" + BillingConstants.SUBSCRIBE_URL + "/" + planName;
   }
+
 }

@@ -12,6 +12,12 @@ import com.sciul.recurly.model.Plans.Plan.TotalBillingCycles;
 import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents;
 import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents.EUR;
 import com.sciul.recurly.model.Plans.Plan.UnitAmountInCents.USD;
+import com.sciul.recurly.model.n.Account;
+import com.sciul.recurly.model.n.NetTerms;
+import com.sciul.recurly.model.n.PoNumber;
+import com.sciul.recurly.model.n.Subscription;
+import com.sciul.recurly.model.n.SubscriptionAddOn;
+import com.sciul.recurly.model.n.SubscriptionAddOns;
 
 @Component
 public class BillingHelper {
@@ -88,6 +94,42 @@ public class BillingHelper {
   public void setPlanCodeName(Plan plan, String name, String code) {
     plan.setPlanCode(name);
     plan.setName(code);
+  }
+
+  public void setAccountDetails(Account acct, String accountId, String emailId) {
+    acct.setAccountCode(accountId);
+    acct.setEmail(emailId);
+  }
+
+  public void setSubscriptionWithAddOn(Subscription subscription,
+        String addOnCode,
+        Long addOnAmountInCents,
+        Integer quantity) {
+    SubscriptionAddOn addOn = new SubscriptionAddOn();
+    addOn.setAddOnCode(addOnCode);
+    addOn.setQuantity(quantity);
+    addOn.setUnitAmountInCents(addOnAmountInCents);
+
+    SubscriptionAddOns addOns = new SubscriptionAddOns();
+    addOns.getSubscriptionAddOn().add(addOn);
+
+    subscription.setSubscriptionAddOns(addOns);
+  }
+
+  public void setSubscriptionWithManualInvoice(Subscription subscription, Integer netTerms, String poNumber) {
+    subscription.setCollectionMethod("manual");
+    NetTerms terms = new NetTerms();
+    terms.setValue(netTerms);
+    subscription.setNetTerms(terms);
+    PoNumber p = new PoNumber();
+    p.setValue(poNumber);
+    subscription.setPoNumber(p);
+  }
+
+  public void setSubscriptionPlan(Subscription subscription, String planCode) {
+    com.sciul.recurly.model.n.Plan plan = new com.sciul.recurly.model.n.Plan();
+    plan.setPlanCode(planCode);
+    subscription.setPlan(plan);
   }
 
 }

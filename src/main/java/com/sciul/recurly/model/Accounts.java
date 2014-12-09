@@ -890,8 +890,6 @@ public class Accounts {
 
       @XmlValue
       protected String value;
-      @XmlAttribute(name = "nil")
-      protected String nil;
 
       /**
        * Gets the value of the value property.
@@ -912,27 +910,6 @@ public class Accounts {
        */
       public void setValue(String value) {
         this.value = value;
-      }
-
-      /**
-       * Gets the value of the nil property.
-       * 
-       * @return possible object is {@link String }
-       * 
-       */
-      public String getNil() {
-        return nil;
-      }
-
-      /**
-       * Sets the value of the nil property.
-       * 
-       * @param value
-       *          allowed object is {@link String }
-       * 
-       */
-      public void setNil(String value) {
-        this.nil = value;
       }
 
     }
@@ -1165,8 +1142,6 @@ public class Accounts {
 
         @XmlValue
         protected String value;
-        @XmlAttribute(name = "nil")
-        protected String nil;
 
         /**
          * Gets the value of the value property.
@@ -1187,27 +1162,6 @@ public class Accounts {
          */
         public void setValue(String value) {
           this.value = value;
-        }
-
-        /**
-         * Gets the value of the nil property.
-         * 
-         * @return possible object is {@link String }
-         * 
-         */
-        public String getNil() {
-          return nil;
-        }
-
-        /**
-         * Sets the value of the nil property.
-         * 
-         * @param value
-         *          allowed object is {@link String }
-         * 
-         */
-        public void setNil(String value) {
-          this.nil = value;
         }
 
       }
@@ -1237,8 +1191,6 @@ public class Accounts {
 
         @XmlValue
         protected String value;
-        @XmlAttribute(name = "nil")
-        protected String nil;
 
         /**
          * Gets the value of the value property.
@@ -1259,27 +1211,6 @@ public class Accounts {
          */
         public void setValue(String value) {
           this.value = value;
-        }
-
-        /**
-         * Gets the value of the nil property.
-         * 
-         * @return possible object is {@link String }
-         * 
-         */
-        public String getNil() {
-          return nil;
-        }
-
-        /**
-         * Sets the value of the nil property.
-         * 
-         * @param value
-         *          allowed object is {@link String }
-         * 
-         */
-        public void setNil(String value) {
-          this.nil = value;
         }
 
       }
@@ -1888,8 +1819,6 @@ public class Accounts {
 
       @XmlValue
       protected String value;
-      @XmlAttribute(name = "nil")
-      protected String nil;
 
       /**
        * Gets the value of the value property.
@@ -1910,27 +1839,6 @@ public class Accounts {
        */
       public void setValue(String value) {
         this.value = value;
-      }
-
-      /**
-       * Gets the value of the nil property.
-       * 
-       * @return possible object is {@link String }
-       * 
-       */
-      public String getNil() {
-        return nil;
-      }
-
-      /**
-       * Sets the value of the nil property.
-       * 
-       * @param value
-       *          allowed object is {@link String }
-       * 
-       */
-      public void setNil(String value) {
-        this.nil = value;
       }
 
     }
@@ -1960,8 +1868,6 @@ public class Accounts {
 
       @XmlValue
       protected String value;
-      @XmlAttribute(name = "nil")
-      protected String nil;
 
       /**
        * Gets the value of the value property.
@@ -1982,27 +1888,6 @@ public class Accounts {
        */
       public void setValue(String value) {
         this.value = value;
-      }
-
-      /**
-       * Gets the value of the nil property.
-       * 
-       * @return possible object is {@link String }
-       * 
-       */
-      public String getNil() {
-        return nil;
-      }
-
-      /**
-       * Sets the value of the nil property.
-       * 
-       * @param value
-       *          allowed object is {@link String }
-       * 
-       */
-      public void setNil(String value) {
-        this.nil = value;
       }
 
     }

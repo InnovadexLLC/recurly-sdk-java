@@ -30,6 +30,7 @@ public class RecurlyConfiguration {
     headers.set("Accept", "application/xml");
     headers.set("Content-Type", "application/xml; charset=utf-8");
     headers.set("Authorization", "Basic " + new String(Base64.encodeBase64(StringUtils.getBytesUtf8(apiKey)), "UTF-8"));
+    headers.set("X-UL-Auth", "test");
     return headers;
   }
 
