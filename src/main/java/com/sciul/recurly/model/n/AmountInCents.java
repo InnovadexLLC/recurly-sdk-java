@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlValue;
 public class AmountInCents {
 
   @XmlValue
-  private short value;
+  private Integer value;
   @XmlAttribute(name = "type")
   private String type;
 
-  public short getValue() {
+  public Integer getValue() {
     return value;
   }
 
-  public void setValue(short value) {
+  public void setValue(Integer value) {
     this.value = value;
   }
 

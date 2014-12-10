@@ -8,7 +8,7 @@ def versionN ="";
 if (project.hasProperty("VERSION")) {  
     versionN = "$VERSION"
 } else {
-    versionN = '1.0.3'
+    versionN = '0.0.0'
 }
 
 sourceCompatibility = 1.7
@@ -43,7 +43,7 @@ buildscript {
 apply plugin: 'release'
 
 dependencies {
-    def sdk = files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-1.0.12-SNAPSHOT.jar')
+    def sdk = files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-0.0.0-SNAPSHOT.jar')
     sdk.each { file ->
         if (!file.exists()) {
             println 'Getting the SDK jar from CENTRAL Repo.'

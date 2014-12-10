@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.n.Account;
+import com.sciul.recurly.model.n.Invoice;
 import com.sciul.sdk.helper.RestWsUtils;
 
 /**
@@ -58,5 +59,24 @@ public class AccountsServiceImpl implements AccountsService {
 
     acct = createAccount(acct);
     return acct;
+  }
+
+  // Post a pending charge to an account.
+  @Override
+  public Invoice postPendingChargeToAccount(Invoice invoice, String accountCode) {
+    Invoice i = null;
+    try {
+      logger.debug("Recurlly Account::::{}", invoice.toString());
+
+      i =
+            restWsUtils
+                  .callRestApiWithHeaders(
+                        new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/accounts/" + accountCode
+                              + "/invoices", "UTF-8")), invoice, Invoice.class, HttpMethod.POST,
+                        recurly.getRecurllyHeaders());
+    } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
+      logger.debug("Error!!!!!!!!!!!!!!! {}", e);
+    }
+    return i;
   }
 }
