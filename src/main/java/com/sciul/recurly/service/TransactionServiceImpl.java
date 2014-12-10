@@ -10,12 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
 
 import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.n.Transaction;
 import com.sciul.sdk.helper.RestWsUtils;
 
+@Service
 public class TransactionServiceImpl implements TransactionService {
 
   private static Logger logger = LoggerFactory.getLogger(TransactionServiceImpl.class);
@@ -35,10 +37,13 @@ public class TransactionServiceImpl implements TransactionService {
     try {
       logger.debug("Recurlly Account::::{}", transaction.toString());
 
-      t =
-            restWsUtils.callRestApiWithHeaders(
-                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/transactions", "UTF-8")),
-                  transaction, Transaction.class, HttpMethod.POST, recurly.getRecurllyHeaders());
+      // t =
+      // restWsUtils.callRestApiWithHeaders(
+      // new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/transactions", "UTF-8")),
+      // transaction, Transaction.class, HttpMethod.POST, recurly.getRecurllyHeaders());
+      restWsUtils.callRestApiWithHeaders(
+            new URI(URIUtil.encodeQuery("http://localhost:8080/api/v1/events/billing", "UTF-8")), transaction,
+            Void.class, HttpMethod.POST, recurly.getRecurllyHeaders());
     } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
     }

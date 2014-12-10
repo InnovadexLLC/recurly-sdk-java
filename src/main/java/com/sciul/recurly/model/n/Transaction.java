@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "account", "invoice", "subscription", "uuid", "action", "amountInCents",
     "taxInCents", "currency", "status", "paymentMethod", "reference", "source", "recurring", "test", "voidable",
-    "refundable", "cvvResult", "avsResult", "avsResultStreet", "avsResultPostal", "createdAt", "details", "a" })
+    "refundable", "cvvResult", "avsResult", "avsResultStreet", "avsResultPostal", "createdAt", "details", "a",
+    "chargeDescription", "chargeAccountinCode" })
 @XmlRootElement(name = "transaction")
 public class Transaction {
 
@@ -64,6 +65,10 @@ public class Transaction {
   private String href;
   @XmlAttribute(name = "type")
   private String type;
+  @XmlAttribute(name = "charge_description")
+  private String chargeDescription;
+  @XmlAttribute(name = "charge_accounting_code")
+  private String chargeAccountinCode;
 
   public Account getAccount() {
     return account;
@@ -263,6 +268,22 @@ public class Transaction {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public String getChargeDescription() {
+    return chargeDescription;
+  }
+
+  public void setChargeDescription(String chargeDescription) {
+    this.chargeDescription = chargeDescription;
+  }
+
+  public String getChargeAccountinCode() {
+    return chargeAccountinCode;
+  }
+
+  public void setChargeAccountinCode(String chargeAccountinCode) {
+    this.chargeAccountinCode = chargeAccountinCode;
   }
 
 }
