@@ -9,3 +9,4 @@ gradle-app.setting
 .project
 
 *.prefs
+/bin
