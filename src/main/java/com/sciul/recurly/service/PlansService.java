@@ -2,6 +2,7 @@ package com.sciul.recurly.service;
 
 import com.sciul.recurly.model.Plans;
 import com.sciul.recurly.model.Plans.Plan;
+import com.sciul.recurly.model.n.AddOn;
 
 /**
  * @author gaurav
@@ -18,5 +19,7 @@ public interface PlansService {
   com.sciul.recurly.model.n.Plan createSubscriptionPlan(com.sciul.recurly.model.n.Plan plan);
 
   Plan createPlan(Plan plan);
+
+  AddOn createPlanAddon(String planCode, AddOn addOn);
 
 }

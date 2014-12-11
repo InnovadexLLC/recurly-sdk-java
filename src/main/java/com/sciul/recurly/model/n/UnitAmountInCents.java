@@ -2,33 +2,32 @@ package com.sciul.recurly.model.n;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "value" })
+@XmlType(name = "", propOrder = { "usd", "eur" })
 public class UnitAmountInCents {
 
-  @XmlValue
-  private String value;
-  @XmlAttribute(name = "type")
-  private String type;
+  @XmlElement(name = "USD")
+  protected USD usd;
+  @XmlElement(name = "EUR")
+  protected EUR eur;
 
-  public String getValue() {
-    return value;
+  public USD getUsd() {
+    return usd;
   }
 
-  public void setValue(String value) {
-    this.value = value;
+  public void setUsd(USD usd) {
+    this.usd = usd;
   }
 
-  public String getType() {
-    return type;
+  public EUR getEur() {
+    return eur;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setEur(EUR eur) {
+    this.eur = eur;
   }
 
 }

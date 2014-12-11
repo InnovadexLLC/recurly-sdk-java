@@ -17,6 +17,7 @@ import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.Plans;
 import com.sciul.recurly.model.Plans.Plan;
+import com.sciul.recurly.model.n.AddOn;
 import com.sciul.sdk.helper.RestWsUtils;
 
 /**
@@ -83,6 +84,23 @@ public class PlansServiceImpl implements PlansService {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
     }
     return p;
+  }
+
+  @Override
+  public AddOn createPlanAddon(String planCode, AddOn addOn) {
+    AddOn result = null;
+    try {
+      logger.debug("RecurllyServerURL::::{}", recurly.getRecurllyServerURL());
+      logger.debug("RecurllyPost::::{}", addOn.toString());
+
+      result =
+            restWsUtils.callRestApiWithHeaders(
+                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/plans/" + planCode + "/add_ons",
+                        "UTF-8")), addOn, AddOn.class, HttpMethod.POST, recurly.getRecurllyHeaders());
+    } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
+      logger.debug("Error!!!!!!!!!!!!!!! {}", e);
+    }
+    return result;
   }
 
   @Override

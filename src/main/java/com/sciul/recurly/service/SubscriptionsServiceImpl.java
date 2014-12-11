@@ -44,9 +44,6 @@ public class SubscriptionsServiceImpl implements SubscriptionsService {
                   new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/subscriptions", "UTF-8")),
                   subscription, Subscription.class, HttpMethod.POST, recurly.getRecurllyHeaders());
 
-      // restWsUtils.callRestApiWithHeaders(
-      // new URI(URIUtil.encodeQuery("http://localhost:8080/api/v1/events/billing", "UTF-8")), subscription,
-      // Subscription.class, HttpMethod.POST, recurly.getRecurllyHeaders());
     } catch (URIException | URISyntaxException | UnsupportedEncodingException e) {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
     }

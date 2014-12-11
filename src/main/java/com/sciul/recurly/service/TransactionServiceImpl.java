@@ -37,10 +37,6 @@ public class TransactionServiceImpl implements TransactionService {
     try {
       logger.debug("Recurlly Account::::{}", transaction.toString());
 
-      // t =
-      // restWsUtils.callRestApiWithHeaders(
-      // new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/transactions", "UTF-8")),
-      // transaction, Transaction.class, HttpMethod.POST, recurly.getRecurllyHeaders());
       restWsUtils.callRestApiWithHeaders(
             new URI(URIUtil.encodeQuery("http://localhost:8080/api/v1/events/billing", "UTF-8")), transaction,
             Void.class, HttpMethod.POST, recurly.getRecurllyHeaders());

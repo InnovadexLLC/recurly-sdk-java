@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlValue;
 public class USD {
 
   @XmlValue
-  private Long value;
+  private Integer value;
   @XmlAttribute(name = "type")
   private String type;
 
-  public Long getValue() {
+  public Integer getValue() {
     return value;
   }
 
-  public void setValue(Long value) {
+  public void setValue(Integer value) {
     this.value = value;
   }
 
