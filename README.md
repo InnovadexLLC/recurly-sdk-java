@@ -1,4 +1,4 @@
 sci-sdk-java
 ============
 
-SCI SDK for Java
+Recurly SDK for Java
