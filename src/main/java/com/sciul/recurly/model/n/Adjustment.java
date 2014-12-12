@@ -14,41 +14,41 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "adjustment")
 public class Adjustment {
 
-  @XmlElement(required = true)
+  @XmlElement
   private Account account;
-  @XmlElement(required = true)
+  @XmlElement
   private Invoice invoice;
-  @XmlElement(required = true)
+  @XmlElement
   private Subscription subscription;
-  @XmlElement(required = true)
+  @XmlElement
   private String uuid;
-  @XmlElement(required = true)
+  @XmlElement
   private String description;
-  @XmlElement(name = "accounting_code", required = true)
+  @XmlElement(name = "accounting_code")
   private AccountingCode accountingCode;
-  @XmlElement(name = "product_code", required = true)
+  @XmlElement(name = "product_code")
   private String productCode;
-  @XmlElement(required = true)
+  @XmlElement
   private String origin;
-  @XmlElement(name = "unit_amount_in_cents", required = true)
-  private UnitAmountInCents unitAmountInCents;
-  @XmlElement(required = true)
+  @XmlElement(name = "unit_amount_in_cents")
+  private Integer unitAmountInCents;
+  @XmlElement
   private Quantity quantity;
-  @XmlElement(name = "discount_in_cents", required = true)
+  @XmlElement(name = "discount_in_cents")
   private DiscountInCents discountInCents;
-  @XmlElement(name = "tax_in_cents", required = true)
+  @XmlElement(name = "tax_in_cents")
   private TaxInCents taxInCents;
-  @XmlElement(name = "total_in_cents", required = true)
+  @XmlElement(name = "total_in_cents")
   private TotalInCents totalInCents;
-  @XmlElement(required = true)
+  @XmlElement
   private String currency;
-  @XmlElement(name = "tax_exempt", required = true)
+  @XmlElement(name = "tax_exempt")
   private TaxExempt taxExempt;
-  @XmlElement(name = "start_date", required = true)
+  @XmlElement(name = "start_date")
   private StartDate startDate;
-  @XmlElement(name = "end_date", required = true)
+  @XmlElement(name = "end_date")
   private EndDate endDate;
-  @XmlElement(name = "created_at", required = true)
+  @XmlElement(name = "created_at")
   private CreatedAt createdAt;
   @XmlAttribute(name = "type")
   private String type;
@@ -119,11 +119,11 @@ public class Adjustment {
     this.origin = origin;
   }
 
-  public UnitAmountInCents getUnitAmountInCents() {
+  public Integer getUnitAmountInCents() {
     return unitAmountInCents;
   }
 
-  public void setUnitAmountInCents(UnitAmountInCents unitAmountInCents) {
+  public void setUnitAmountInCents(Integer unitAmountInCents) {
     this.unitAmountInCents = unitAmountInCents;
   }
 
