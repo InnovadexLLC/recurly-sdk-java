@@ -18,6 +18,7 @@ import com.sciul.recurly.model.n.Account;
 import com.sciul.recurly.model.n.Adjustment;
 import com.sciul.recurly.model.n.BillingInfo;
 import com.sciul.recurly.model.n.Invoice;
+import com.sciul.recurly.model.n.Token;
 import com.sciul.sdk.helper.RestWsUtils;
 
 /**
@@ -88,10 +89,13 @@ public class AccountsServiceImpl implements AccountsService {
     try {
       logger.debug("Recurlly Account::::{}, {}", accountCode, token);
 
+      Token t = new Token();
+      t.setToken(token);
+
       b =
             restWsUtils.callRestApiWithHeaders(
                   new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/accounts/" + accountCode
-                        + "/billing_info?token=" + token, "UTF-8")), Void.class, BillingInfo.class, HttpMethod.PUT,
+                        + "/billing_info", "UTF-8")), t, BillingInfo.class, HttpMethod.PUT,
                   recurly.getRecurllyHeaders());
     } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
