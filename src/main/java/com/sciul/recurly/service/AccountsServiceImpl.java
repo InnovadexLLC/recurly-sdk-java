@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.n.Account;
+import com.sciul.recurly.model.n.Adjustment;
 import com.sciul.recurly.model.n.BillingInfo;
 import com.sciul.recurly.model.n.Invoice;
 import com.sciul.sdk.helper.RestWsUtils;
@@ -96,5 +97,22 @@ public class AccountsServiceImpl implements AccountsService {
       logger.debug("Error!!!!!!!!!!!!!!! {}", e);
     }
     return b;
+  }
+
+  @Override
+  public Adjustment createAdjustment(Adjustment adjustment, String accountCode) {
+    Adjustment a = null;
+    try {
+      logger.debug("Recurlly Account::::{}", adjustment.toString());
+
+      a =
+            restWsUtils.callRestApiWithHeaders(
+                  new URI(URIUtil.encodeQuery(recurly.getRecurllyServerURL() + "/v2/accounts/" + accountCode
+                        + "/adjustments", "UTF-8")), adjustment, Adjustment.class, HttpMethod.POST,
+                  recurly.getRecurllyHeaders());
+    } catch (URIException | UnsupportedEncodingException | URISyntaxException e) {
+      logger.debug("Error!!!!!!!!!!!!!!! {}", e);
+    }
+    return a;
   }
 }

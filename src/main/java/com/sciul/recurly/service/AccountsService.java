@@ -1,6 +1,7 @@
 package com.sciul.recurly.service;
 
 import com.sciul.recurly.model.n.Account;
+import com.sciul.recurly.model.n.Adjustment;
 import com.sciul.recurly.model.n.BillingInfo;
 import com.sciul.recurly.model.n.Invoice;
 
@@ -16,5 +17,7 @@ public interface AccountsService {
   Invoice postPendingChargeToAccount(Invoice invoice, String accountCode);
 
   BillingInfo updateBilling(String accountCode, String token);
+
+  Adjustment createAdjustment(Adjustment adjustment, String accountCode);
 
 }
