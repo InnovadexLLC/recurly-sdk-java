@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @XmlType(name = "", propOrder = { "token" })
 @XmlRootElement(name = "billing_info")
 public class Token {
-  @XmlElement(name = "token")
+  @XmlElement(name = "token_id")
   private String token;
 
   public String getToken() {
