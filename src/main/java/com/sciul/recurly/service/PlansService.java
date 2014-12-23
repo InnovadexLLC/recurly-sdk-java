@@ -1,25 +1,45 @@
 package com.sciul.recurly.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
+
+import com.sciul.recurly.helper.BillingConstants;
+import com.sciul.recurly.helper.BillingHelper;
+import com.sciul.recurly.model.AddOn;
+import com.sciul.recurly.model.Plan;
 import com.sciul.recurly.model.Plans;
-import com.sciul.recurly.model.Plans.Plan;
-import com.sciul.recurly.model.n.AddOn;
 
 /**
- * @author gaurav
+ * @author Gaurav
  */
-public interface PlansService {
-  public Plans getPlans();
+@Service
+public class PlansService extends AbsctractService {
 
-  public Plan createOneTimeTransactionPlan(String id, Integer priceInCents, String successURL);
+  @SuppressWarnings("unused")
+  private static Logger logger = LoggerFactory.getLogger(PlansService.class);
 
-  String getHostedPaymentPageURL(String planName);
+  @Autowired
+  private BillingHelper billingHelper;
 
-  com.sciul.recurly.model.n.Plans getNewPlans();
+  public Plans getPlans() {
+    return call(BillingConstants.RecurlyApiPath.PLANS.toString(), null, Plans.class, HttpMethod.GET);
+  }
 
-  com.sciul.recurly.model.n.Plan createSubscriptionPlan(com.sciul.recurly.model.n.Plan plan);
+  public Plans getPlan(String planCode) {
+    return call(BillingConstants.RecurlyApiPath.PLANS.toString() + planCode, null, Plans.class, HttpMethod.GET);
+  }
 
-  Plan createPlan(Plan plan);
+  public Plan createPlan(Plan plan) {
+    return call(BillingConstants.RecurlyApiPath.PLANS.toString(), plan, Plan.class, HttpMethod.POST);
+  }
 
-  AddOn createPlanAddon(String planCode, AddOn addOn);
+  public AddOn createPlanAddon(String planCode, AddOn addOn) {
+    return call(
+          BillingConstants.RecurlyApiPath.PLANS.toString() + planCode
+                + BillingConstants.RecurlyApiPath.ADDONS.toString(), addOn, AddOn.class, HttpMethod.POST);
+  }
 
 }

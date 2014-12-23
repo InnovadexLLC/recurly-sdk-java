@@ -1,23 +1,59 @@
 package com.sciul.recurly.service;
 
-import com.sciul.recurly.model.n.Account;
-import com.sciul.recurly.model.n.Adjustment;
-import com.sciul.recurly.model.n.BillingInfo;
-import com.sciul.recurly.model.n.Invoice;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
+
+import com.sciul.recurly.helper.BillingConstants;
+import com.sciul.recurly.helper.BillingHelper;
+import com.sciul.recurly.model.Account;
+import com.sciul.recurly.model.Adjustment;
+import com.sciul.recurly.model.BillingInfo;
+import com.sciul.recurly.model.Invoice;
+import com.sciul.recurly.model.Token;
 
 /**
  * @author Gaurav
  */
-public interface AccountsService {
+@Service
+public class AccountsService extends AbsctractService {
 
-  Account createAccount(Account account);
+  @SuppressWarnings("unused")
+  private static Logger logger = LoggerFactory.getLogger(AccountsService.class);
 
-  Account createAccount(String accountId, String emailId);
+  @Autowired
+  private BillingHelper billingHelper;
 
-  Invoice postPendingChargeToAccount(Invoice invoice, String accountCode);
+  public Account createAccount(Account account) {
+    return call(BillingConstants.RecurlyApiPath.ACCOUNTS.toString(), account, Account.class, HttpMethod.POST);
+  }
 
-  BillingInfo updateBilling(String accountCode, String token);
+  public Account createAccount(String accountId, String emailId) {
+    Account acct = new Account();
+    billingHelper.setAccountDetails(acct, accountId, emailId);
+    acct = createAccount(acct);
+    return acct;
+  }
 
-  Adjustment createAdjustment(Adjustment adjustment, String accountCode);
+  // Post a pending charge to an account.
+  public Invoice postPendingChargeToAccount(Invoice invoice, String accountCode) {
+    return call(BillingConstants.RecurlyApiPath.ACCOUNTS.toString() + accountCode
+          + BillingConstants.RecurlyApiPath.INVOICES.toString(), invoice, Invoice.class, HttpMethod.POST);
+  }
 
+  public BillingInfo updateBilling(String accountCode, String token) {
+    Token t = new Token();
+    t.setToken(token);
+    BillingInfo b =
+          call(BillingConstants.RecurlyApiPath.ACCOUNTS.toString() + accountCode
+                + BillingConstants.RecurlyApiPath.BILLING_INFO.toString(), t, BillingInfo.class, HttpMethod.PUT);
+    return b;
+  }
+
+  public Adjustment createAdjustment(Adjustment adjustment, String accountCode) {
+    return call(BillingConstants.RecurlyApiPath.ACCOUNTS.toString() + accountCode
+          + BillingConstants.RecurlyApiPath.ADJUSTMENTS.toString(), adjustment, Adjustment.class, HttpMethod.POST);
+  }
 }
