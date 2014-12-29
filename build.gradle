@@ -47,7 +47,7 @@ dependencies {
     sdk.each { file ->
         if (!file.exists()) {
             println 'Getting the SDK jar from CENTRAL Repo.'
-            compile 'com.sciul:sci-sdk-java:1.0.37-SNAPSHOT'
+            compile 'com.sciul:sci-sdk-java:1.0.38-SNAPSHOT'
         }else{
            println 'Getting the SDK jar from LOCAL Repo.'
            compile sdk
