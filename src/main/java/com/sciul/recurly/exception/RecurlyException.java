@@ -2,7 +2,7 @@ package com.sciul.recurly.exception;
 
 import com.sciul.recurly.model.RecurlyErrors;
 
-public class RecurlyException extends RuntimeException {
+public class RecurlyException extends Exception {
 
   private static final long serialVersionUID = -7345365257887387856L;
   private Integer code;

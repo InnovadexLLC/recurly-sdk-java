@@ -10,3 +10,9 @@ gradle-app.setting
 
 *.prefs
 /bin
+
+.idea/.name
+
+*.xml
+
+*.iml

@@ -7,14 +7,15 @@ public class BillingConstants {
   public static final String SUBSCRIBE_URL = "subscribe";
 
   public enum RecurlyApiPath {
-    ACCOUNTS("/v2/accounts/"),
+    ACCOUNTS("/v2/accounts"),
     INVOICES("/invoices"),
     BILLING_INFO("/billing_info"),
     ADJUSTMENTS("/adjustments"),
     PLANS("/v2/plans"),
     ADDONS("/add_ons"),
     SUBSCRIPTIONS("/v2/subscriptions"),
-    TRANSACTIONS("/v2/transactions");
+    TRANSACTIONS("/v2/transactions"),
+    V2ADJUSTMENTS("/v2/adjustments");
 
     private String value;
 
