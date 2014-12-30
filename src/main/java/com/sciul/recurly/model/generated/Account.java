@@ -19,6 +19,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for anonymous complex type.
@@ -182,44 +183,83 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @XmlRootElement(name = "account")
 public class Account {
 
+  /** The adjustments. */
   @XmlElement(required = true)
   protected Account.Adjustments adjustments;
+  
+  /** The billing info. */
   @XmlElement(name = "billing_info", required = true)
   protected Account.BillingInfo billingInfo;
+  
+  /** The invoices. */
   @XmlElement(required = true)
   protected Account.Invoices invoices;
+  
+  /** The redemption. */
   @XmlElement(required = true)
   protected Account.Redemption redemption;
+  
+  /** The subscriptions. */
   @XmlElement(required = true)
   protected Account.Subscriptions subscriptions;
+  
+  /** The transactions. */
   @XmlElement(required = true)
   protected Account.Transactions transactions;
+  
+  /** The account code. */
   @XmlElement(name = "account_code")
   protected String accountCode;
+  
+  /** The state. */
   @XmlElement(required = true)
   protected String state;
+  
+  /** The username. */
   @XmlElement(required = true)
   protected Account.Username username;
+  
+  /** The email. */
   @XmlElement(required = true)
   protected String email;
+  
+  /** The first name. */
   @XmlElement(name = "first_name", required = true)
   protected String firstName;
+  
+  /** The last name. */
   @XmlElement(name = "last_name", required = true)
   protected String lastName;
+  
+  /** The company name. */
   @XmlElement(name = "company_name", required = true)
   protected String companyName;
+  
+  /** The vat number. */
   @XmlElement(name = "vat_number", required = true)
   protected Account.VatNumber vatNumber;
+  
+  /** The tax exempt. */
   @XmlElement(name = "tax_exempt", required = true)
   protected Account.TaxExempt taxExempt;
+  
+  /** The address. */
   @XmlElement(required = true)
   protected Account.Address address;
+  
+  /** The accept language. */
   @XmlElement(name = "accept_language", required = true)
   protected Account.AcceptLanguage acceptLanguage;
+  
+  /** The hosted login token. */
   @XmlElement(name = "hosted_login_token", required = true)
   protected String hostedLoginToken;
+  
+  /** The created at. */
   @XmlElement(name = "created_at", required = true)
   protected Account.CreatedAt createdAt;
+  
+  /** The href. */
   @XmlAttribute(name = "href")
   protected String href;
 
@@ -351,7 +391,8 @@ public class Account {
 
   /**
    * Gets the value of the accountCode property.
-   * 
+   *
+   * @return the account code
    */
   public String getAccountCode() {
     return accountCode;
@@ -359,7 +400,8 @@ public class Account {
 
   /**
    * Sets the value of the accountCode property.
-   * 
+   *
+   * @param value the new account code
    */
   public void setAccountCode(String value) {
     this.accountCode = value;
@@ -660,6 +702,7 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class AcceptLanguage {
 
+    /** The value. */
     @XmlValue
     protected String value;
 
@@ -731,17 +774,30 @@ public class Account {
   @XmlType(name = "", propOrder = { "address1", "address2", "city", "state", "zip", "country", "phone" })
   public static class Address {
 
+    /** The address1. */
     @XmlElement(required = true)
     protected String address1;
+    
+    /** The address2. */
     @XmlElement(required = true)
     protected Account.Address.Address2 address2;
+    
+    /** The city. */
     @XmlElement(required = true)
     protected String city;
+    
+    /** The state. */
     @XmlElement(required = true)
     protected String state;
+    
+    /** The zip. */
     protected int zip;
+    
+    /** The country. */
     @XmlElement(required = true)
     protected String country;
+    
+    /** The phone. */
     @XmlElement(required = true)
     protected Account.Address.Phone phone;
 
@@ -831,7 +887,8 @@ public class Account {
 
     /**
      * Gets the value of the zip property.
-     * 
+     *
+     * @return the zip
      */
     public int getZip() {
       return zip;
@@ -839,7 +896,8 @@ public class Account {
 
     /**
      * Sets the value of the zip property.
-     * 
+     *
+     * @param value the new zip
      */
     public void setZip(int value) {
       this.zip = value;
@@ -909,6 +967,7 @@ public class Account {
     @XmlType(name = "", propOrder = { "value" })
     public static class Address2 {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -957,6 +1016,7 @@ public class Account {
     @XmlType(name = "", propOrder = { "value" })
     public static class Phone {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -1008,8 +1068,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Adjustments {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1080,8 +1143,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class BillingInfo {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1152,9 +1218,12 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class CreatedAt {
 
+    /** The value. */
     @XmlValue
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar value;
+    
+    /** The type. */
     @XmlAttribute(name = "type")
     protected String type;
 
@@ -1225,8 +1294,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Invoices {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1297,8 +1369,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Redemption {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1369,8 +1444,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Subscriptions {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1441,8 +1519,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class TaxExempt {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The type. */
     @XmlAttribute(name = "type")
     protected String type;
 
@@ -1513,8 +1594,11 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Transactions {
 
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1584,6 +1668,7 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class Username {
 
+    /** The value. */
     @XmlValue
     protected String value;
 
@@ -1632,6 +1717,7 @@ public class Account {
   @XmlType(name = "", propOrder = { "value" })
   public static class VatNumber {
 
+    /** The value. */
     @XmlValue
     protected String value;
 

@@ -3,35 +3,64 @@ package com.sciul.recurly.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * The Class RecurlyClientFactoryBean. This class it to provide all the auto wire services.
+ * 
+ * @author GauravChawla
+ */
 @Component
 public class RecurlyClientFactoryBean {
 
+  /** The account service. */
   @Autowired
-  private AccountsService accountService;
+  private AccountService accountService;
 
+  /** The subscriptions service. */
   @Autowired
-  private SubscriptionsService subscriptionsService;
+  private SubscriptionService subscriptionService;
 
+  /** The plans service. */
   @Autowired
-  private PlansService plansService;
+  private PlanService planService;
 
+  /** The transactions service. */
   @Autowired
-  private TransactionsService transactionsService;
+  private TransactionService transactionService;
 
-  public PlansService getPlansService() {
-    return plansService;
+  /**
+   * Gets the plans service.
+   * 
+   * @return the plans service
+   */
+  public PlanService getPlanService() {
+    return planService;
   }
 
-  public TransactionsService getTransactionsService() {
-    return transactionsService;
+  /**
+   * Gets the transactions service.
+   * 
+   * @return the transactions service
+   */
+  public TransactionService getTransactionService() {
+    return transactionService;
   }
 
-  public AccountsService getAccountService() {
+  /**
+   * Gets the account service.
+   * 
+   * @return the account service
+   */
+  public AccountService getAccountService() {
     return accountService;
   }
 
-  public SubscriptionsService getSubscriptionsService() {
-    return subscriptionsService;
+  /**
+   * Gets the subscriptions service.
+   * 
+   * @return the subscriptions service
+   */
+  public SubscriptionService getSubscriptionService() {
+    return subscriptionService;
   }
 
 }

@@ -11,20 +11,54 @@ import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.helper.BillingHelper;
 import com.sciul.recurly.model.Subscription;
 
+/**
+ * The Class SubscriptionsService.
+ * 
+ * @author GauravChawla
+ */
 @Service
-public class SubscriptionsService extends AbsctractService {
+public class SubscriptionService extends AbstractService {
 
+  /** The logger. */
   @SuppressWarnings("unused")
-  private static Logger logger = LoggerFactory.getLogger(SubscriptionsService.class);
+  private static Logger logger = LoggerFactory.getLogger(SubscriptionService.class);
 
+  /** The billing helper. */
   @Autowired
   private BillingHelper billingHelper;
 
+  @Override
+  public Logger getLogger() {
+    return logger;
+  }
+
+  /**
+   * Creates the subscription.
+   * 
+   * @param subscription
+   *          the subscription
+   * @return the subscription
+   * @throws RecurlyException
+   *           the recurly exception
+   */
   public Subscription createSubscription(Subscription subscription) throws RecurlyException {
     return call(BillingConstants.RecurlyApiPath.SUBSCRIPTIONS.toString(), subscription, Subscription.class,
           HttpMethod.POST);
   }
 
+  /**
+   * Creates the subscription with manual invoice.
+   * 
+   * @param subscription
+   *          the subscription
+   * @param netTerms
+   *          the net terms
+   * @param poNumber
+   *          the po number
+   * @return the subscription
+   * @throws RecurlyException
+   *           the recurly exception
+   */
   public Subscription createSubscriptionWithManualInvoice(Subscription subscription, Integer netTerms, String poNumber)
         throws RecurlyException {
     billingHelper.setSubscriptionWithManualInvoice(subscription, netTerms, poNumber);
@@ -32,6 +66,21 @@ public class SubscriptionsService extends AbsctractService {
     return s;
   }
 
+  /**
+   * Creates the subscription with add on.
+   * 
+   * @param subscription
+   *          the subscription
+   * @param addOnCode
+   *          the add on code
+   * @param amountInCents
+   *          the amount in cents
+   * @param quantity
+   *          the quantity
+   * @return the subscription
+   * @throws RecurlyException
+   *           the recurly exception
+   */
   public Subscription createSubscriptionWithAddOn(Subscription subscription,
         String addOnCode,
         Long amountInCents,
@@ -41,6 +90,25 @@ public class SubscriptionsService extends AbsctractService {
     return s;
   }
 
+  /**
+   * Creates the manual invoice subscription with addon.
+   * 
+   * @param subscription
+   *          the subscription
+   * @param netTerms
+   *          the net terms
+   * @param poNumber
+   *          the po number
+   * @param addOnCode
+   *          the add on code
+   * @param addOnAmountInCents
+   *          the add on amount in cents
+   * @param quantity
+   *          the quantity
+   * @return the subscription
+   * @throws RecurlyException
+   *           the recurly exception
+   */
   public Subscription createManualInvoiceSubscriptionWithAddon(Subscription subscription,
         Integer netTerms,
         String poNumber,

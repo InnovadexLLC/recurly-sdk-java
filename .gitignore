@@ -16,3 +16,11 @@ gradle-app.setting
 *.xml
 
 *.iml
+
+*.html
+
+*.gif
+
+*.css
+
+doc/package-list

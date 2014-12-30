@@ -9,7 +9,10 @@ package com.sciul.recurly.model.generated;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+// TODO: Auto-generated Javadoc
 /**
+ * A factory for creating Object objects.
+ *
  * @author Gaurav
  */
 /**
@@ -27,15 +30,15 @@ public class ObjectFactory {
 
   /**
    * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package:
-   * generated
-   * 
+   * generated.
    */
   public ObjectFactory() {
   }
 
   /**
-   * Create an instance of {@link Accounts }
-   * 
+   * Create an instance of {@link Accounts }.
+   *
+   * @return the accounts
    */
   public Accounts createAccounts() {
     return new Accounts();
@@ -43,7 +46,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account }
-   * 
+   *
+   * @return the account
    */
   public Accounts.Account createAccountsAccount() {
     return new Accounts.Account();
@@ -51,7 +55,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Address }
-   * 
+   *
+   * @return the address
    */
   public Accounts.Account.Address createAccountsAccountAddress() {
     return new Accounts.Account.Address();
@@ -59,7 +64,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Adjustments }
-   * 
+   *
+   * @return the adjustments
    */
   public Accounts.Account.Adjustments createAccountsAccountAdjustments() {
     return new Accounts.Account.Adjustments();
@@ -67,7 +73,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.BillingInfo }
-   * 
+   *
+   * @return the billing info
    */
   public Accounts.Account.BillingInfo createAccountsAccountBillingInfo() {
     return new Accounts.Account.BillingInfo();
@@ -75,7 +82,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Invoices }
-   * 
+   *
+   * @return the invoices
    */
   public Accounts.Account.Invoices createAccountsAccountInvoices() {
     return new Accounts.Account.Invoices();
@@ -83,7 +91,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Redemption }
-   * 
+   *
+   * @return the redemption
    */
   public Accounts.Account.Redemption createAccountsAccountRedemption() {
     return new Accounts.Account.Redemption();
@@ -91,7 +100,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Subscriptions }
-   * 
+   *
+   * @return the subscriptions
    */
   public Accounts.Account.Subscriptions createAccountsAccountSubscriptions() {
     return new Accounts.Account.Subscriptions();
@@ -99,7 +109,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Transactions }
-   * 
+   *
+   * @return the transactions
    */
   public Accounts.Account.Transactions createAccountsAccountTransactions() {
     return new Accounts.Account.Transactions();
@@ -107,7 +118,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Username }
-   * 
+   *
+   * @return the username
    */
   public Accounts.Account.Username createAccountsAccountUsername() {
     return new Accounts.Account.Username();
@@ -115,7 +127,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.VatNumber }
-   * 
+   *
+   * @return the vat number
    */
   public Accounts.Account.VatNumber createAccountsAccountVatNumber() {
     return new Accounts.Account.VatNumber();
@@ -123,7 +136,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.TaxExempt }
-   * 
+   *
+   * @return the tax exempt
    */
   public Accounts.Account.TaxExempt createAccountsAccountTaxExempt() {
     return new Accounts.Account.TaxExempt();
@@ -131,7 +145,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.AcceptLanguage }
-   * 
+   *
+   * @return the accept language
    */
   public Accounts.Account.AcceptLanguage createAccountsAccountAcceptLanguage() {
     return new Accounts.Account.AcceptLanguage();
@@ -139,7 +154,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.CreatedAt }
-   * 
+   *
+   * @return the created at
    */
   public Accounts.Account.CreatedAt createAccountsAccountCreatedAt() {
     return new Accounts.Account.CreatedAt();
@@ -147,7 +163,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Address.Address2 }
-   * 
+   *
+   * @return the address2
    */
   public Accounts.Account.Address.Address2 createAccountsAccountAddressAddress2() {
     return new Accounts.Account.Address.Address2();
@@ -155,15 +172,17 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Accounts.Account.Address.Phone }
-   * 
+   *
+   * @return the phone
    */
   public Accounts.Account.Address.Phone createAccountsAccountAddressPhone() {
     return new Accounts.Account.Address.Phone();
   }
 
   /**
-   * Create an instance of {@link Plans }
-   * 
+   * Create an instance of {@link Plans }.
+   *
+   * @return the plans
    */
   public Plans createPlans() {
     return new Plans();
@@ -171,7 +190,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan }
-   * 
+   *
+   * @return the plan
    */
   public Plans.Plan createPlansPlan() {
     return new Plans.Plan();
@@ -179,7 +199,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.SetupFeeInCents }
-   * 
+   *
+   * @return the setup fee in cents
    */
   public Plans.Plan.SetupFeeInCents createPlansPlanSetupFeeInCents() {
     return new Plans.Plan.SetupFeeInCents();
@@ -187,7 +208,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.UnitAmountInCents }
-   * 
+   *
+   * @return the unit amount in cents
    */
   public Plans.Plan.UnitAmountInCents createPlansPlanUnitAmountInCents() {
     return new Plans.Plan.UnitAmountInCents();
@@ -195,7 +217,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.AddOns }
-   * 
+   *
+   * @return the adds the ons
    */
   public Plans.Plan.AddOns createPlansPlanAddOns() {
     return new Plans.Plan.AddOns();
@@ -203,7 +226,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.Description }
-   * 
+   *
+   * @return the description
    */
   public Plans.Plan.Description createPlansPlanDescription() {
     return new Plans.Plan.Description();
@@ -211,7 +235,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.SuccessUrl }
-   * 
+   *
+   * @return the success url
    */
   public Plans.Plan.SuccessUrl createPlansPlanSuccessUrl() {
     return new Plans.Plan.SuccessUrl();
@@ -219,7 +244,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.CancelUrl }
-   * 
+   *
+   * @return the cancel url
    */
   public Plans.Plan.CancelUrl createPlansPlanCancelUrl() {
     return new Plans.Plan.CancelUrl();
@@ -227,7 +253,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.DisplayDonationAmounts }
-   * 
+   *
+   * @return the display donation amounts
    */
   public Plans.Plan.DisplayDonationAmounts createPlansPlanDisplayDonationAmounts() {
     return new Plans.Plan.DisplayDonationAmounts();
@@ -235,7 +262,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.DisplayQuantity }
-   * 
+   *
+   * @return the display quantity
    */
   public Plans.Plan.DisplayQuantity createPlansPlanDisplayQuantity() {
     return new Plans.Plan.DisplayQuantity();
@@ -243,7 +271,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.DisplayPhoneNumber }
-   * 
+   *
+   * @return the display phone number
    */
   public Plans.Plan.DisplayPhoneNumber createPlansPlanDisplayPhoneNumber() {
     return new Plans.Plan.DisplayPhoneNumber();
@@ -251,7 +280,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.BypassHostedConfirmation }
-   * 
+   *
+   * @return the bypass hosted confirmation
    */
   public Plans.Plan.BypassHostedConfirmation createPlansPlanBypassHostedConfirmation() {
     return new Plans.Plan.BypassHostedConfirmation();
@@ -259,7 +289,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.PaymentPageTosLink }
-   * 
+   *
+   * @return the payment page tos link
    */
   public Plans.Plan.PaymentPageTosLink createPlansPlanPaymentPageTosLink() {
     return new Plans.Plan.PaymentPageTosLink();
@@ -267,7 +298,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.PlanIntervalLength }
-   * 
+   *
+   * @return the plan interval length
    */
   public Plans.Plan.PlanIntervalLength createPlansPlanPlanIntervalLength() {
     return new Plans.Plan.PlanIntervalLength();
@@ -275,7 +307,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.TrialIntervalLength }
-   * 
+   *
+   * @return the trial interval length
    */
   public Plans.Plan.TrialIntervalLength createPlansPlanTrialIntervalLength() {
     return new Plans.Plan.TrialIntervalLength();
@@ -283,7 +316,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.AccountingCode }
-   * 
+   *
+   * @return the accounting code
    */
   public Plans.Plan.AccountingCode createPlansPlanAccountingCode() {
     return new Plans.Plan.AccountingCode();
@@ -291,7 +325,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.CreatedAt }
-   * 
+   *
+   * @return the created at
    */
   public Plans.Plan.CreatedAt createPlansPlanCreatedAt() {
     return new Plans.Plan.CreatedAt();
@@ -299,7 +334,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.TaxExempt }
-   * 
+   *
+   * @return the tax exempt
    */
   public Plans.Plan.TaxExempt createPlansPlanTaxExempt() {
     return new Plans.Plan.TaxExempt();
@@ -307,7 +343,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.SetupFeeInCents.USD }
-   * 
+   *
+   * @return the usd
    */
   public Plans.Plan.SetupFeeInCents.USD createPlansPlanSetupFeeInCentsUSD() {
     return new Plans.Plan.SetupFeeInCents.USD();
@@ -315,7 +352,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.SetupFeeInCents.EUR }
-   * 
+   *
+   * @return the eur
    */
   public Plans.Plan.SetupFeeInCents.EUR createPlansPlanSetupFeeInCentsEUR() {
     return new Plans.Plan.SetupFeeInCents.EUR();
@@ -323,7 +361,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.UnitAmountInCents.USD }
-   * 
+   *
+   * @return the usd
    */
   public Plans.Plan.UnitAmountInCents.USD createPlansPlanUnitAmountInCentsUSD() {
     return new Plans.Plan.UnitAmountInCents.USD();
@@ -331,15 +370,17 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Plans.Plan.UnitAmountInCents.EUR }
-   * 
+   *
+   * @return the eur
    */
   public Plans.Plan.UnitAmountInCents.EUR createPlansPlanUnitAmountInCentsEUR() {
     return new Plans.Plan.UnitAmountInCents.EUR();
   }
 
   /**
-   * Create an instance of {@link Subscriptions }
-   * 
+   * Create an instance of {@link Subscriptions }.
+   *
+   * @return the subscriptions
    */
   public Subscriptions createSubscriptions() {
     return new Subscriptions();
@@ -347,7 +388,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription }
-   * 
+   *
+   * @return the subscription
    */
   public Subscriptions.Subscription createSubscriptionsSubscription() {
     return new Subscriptions.Subscription();
@@ -355,7 +397,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.SubscriptionAddOns }
-   * 
+   *
+   * @return the subscription add ons
    */
   public Subscriptions.Subscription.SubscriptionAddOns createSubscriptionsSubscriptionSubscriptionAddOns() {
     return new Subscriptions.Subscription.SubscriptionAddOns();
@@ -363,7 +406,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.Account }
-   * 
+   *
+   * @return the account
    */
   public Subscriptions.Subscription.Account createSubscriptionsSubscriptionAccount() {
     return new Subscriptions.Subscription.Account();
@@ -371,7 +415,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.Invoice }
-   * 
+   *
+   * @return the invoice
    */
   public Subscriptions.Subscription.Invoice createSubscriptionsSubscriptionInvoice() {
     return new Subscriptions.Subscription.Invoice();
@@ -379,7 +424,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.Plan }
-   * 
+   *
+   * @return the plan
    */
   public Subscriptions.Subscription.Plan createSubscriptionsSubscriptionPlan() {
     return new Subscriptions.Subscription.Plan();
@@ -387,7 +433,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.UnitAmountInCents }
-   * 
+   *
+   * @return the unit amount in cents
    */
   public Subscriptions.Subscription.UnitAmountInCents createSubscriptionsSubscriptionUnitAmountInCents() {
     return new Subscriptions.Subscription.UnitAmountInCents();
@@ -395,7 +442,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.Quantity }
-   * 
+   *
+   * @return the quantity
    */
   public Subscriptions.Subscription.Quantity createSubscriptionsSubscriptionQuantity() {
     return new Subscriptions.Subscription.Quantity();
@@ -403,7 +451,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.ActivatedAt }
-   * 
+   *
+   * @return the activated at
    */
   public Subscriptions.Subscription.ActivatedAt createSubscriptionsSubscriptionActivatedAt() {
     return new Subscriptions.Subscription.ActivatedAt();
@@ -411,7 +460,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.CanceledAt }
-   * 
+   *
+   * @return the canceled at
    */
   public Subscriptions.Subscription.CanceledAt createSubscriptionsSubscriptionCanceledAt() {
     return new Subscriptions.Subscription.CanceledAt();
@@ -419,7 +469,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.ExpiresAt }
-   * 
+   *
+   * @return the expires at
    */
   public Subscriptions.Subscription.ExpiresAt createSubscriptionsSubscriptionExpiresAt() {
     return new Subscriptions.Subscription.ExpiresAt();
@@ -427,7 +478,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.CurrentPeriodStartedAt }
-   * 
+   *
+   * @return the current period started at
    */
   public Subscriptions.Subscription.CurrentPeriodStartedAt createSubscriptionsSubscriptionCurrentPeriodStartedAt() {
     return new Subscriptions.Subscription.CurrentPeriodStartedAt();
@@ -435,7 +487,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.CurrentPeriodEndsAt }
-   * 
+   *
+   * @return the current period ends at
    */
   public Subscriptions.Subscription.CurrentPeriodEndsAt createSubscriptionsSubscriptionCurrentPeriodEndsAt() {
     return new Subscriptions.Subscription.CurrentPeriodEndsAt();
@@ -443,7 +496,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.TrialStartedAt }
-   * 
+   *
+   * @return the trial started at
    */
   public Subscriptions.Subscription.TrialStartedAt createSubscriptionsSubscriptionTrialStartedAt() {
     return new Subscriptions.Subscription.TrialStartedAt();
@@ -451,7 +505,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.TrialEndsAt }
-   * 
+   *
+   * @return the trial ends at
    */
   public Subscriptions.Subscription.TrialEndsAt createSubscriptionsSubscriptionTrialEndsAt() {
     return new Subscriptions.Subscription.TrialEndsAt();
@@ -459,7 +514,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.TaxInCents }
-   * 
+   *
+   * @return the tax in cents
    */
   public Subscriptions.Subscription.TaxInCents createSubscriptionsSubscriptionTaxInCents() {
     return new Subscriptions.Subscription.TaxInCents();
@@ -467,7 +523,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.TaxRate }
-   * 
+   *
+   * @return the tax rate
    */
   public Subscriptions.Subscription.TaxRate createSubscriptionsSubscriptionTaxRate() {
     return new Subscriptions.Subscription.TaxRate();
@@ -475,7 +532,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.PoNumber }
-   * 
+   *
+   * @return the po number
    */
   public Subscriptions.Subscription.PoNumber createSubscriptionsSubscriptionPoNumber() {
     return new Subscriptions.Subscription.PoNumber();
@@ -483,7 +541,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.NetTerms }
-   * 
+   *
+   * @return the net terms
    */
   public Subscriptions.Subscription.NetTerms createSubscriptionsSubscriptionNetTerms() {
     return new Subscriptions.Subscription.NetTerms();
@@ -491,7 +550,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.A }
-   * 
+   *
+   * @return the a
    */
   public Subscriptions.Subscription.A createSubscriptionsSubscriptionA() {
     return new Subscriptions.Subscription.A();
@@ -499,7 +559,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn }
-   * 
+   *
+   * @return the subscription add on
    */
   public Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn
         createSubscriptionsSubscriptionSubscriptionAddOnsSubscriptionAddOn() {
@@ -507,8 +568,9 @@ public class ObjectFactory {
   }
 
   /**
-   * Create an instance of {@link Account }
-   * 
+   * Create an instance of {@link Account }.
+   *
+   * @return the account
    */
   public Account createAccount() {
     return new Account();
@@ -516,7 +578,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Address }
-   * 
+   *
+   * @return the address
    */
   public Account.Address createAccountAddress() {
     return new Account.Address();
@@ -524,7 +587,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Adjustments }
-   * 
+   *
+   * @return the adjustments
    */
   public Account.Adjustments createAccountAdjustments() {
     return new Account.Adjustments();
@@ -532,7 +596,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.BillingInfo }
-   * 
+   *
+   * @return the billing info
    */
   public Account.BillingInfo createAccountBillingInfo() {
     return new Account.BillingInfo();
@@ -540,7 +605,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Invoices }
-   * 
+   *
+   * @return the invoices
    */
   public Account.Invoices createAccountInvoices() {
     return new Account.Invoices();
@@ -548,7 +614,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Redemption }
-   * 
+   *
+   * @return the redemption
    */
   public Account.Redemption createAccountRedemption() {
     return new Account.Redemption();
@@ -556,7 +623,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Subscriptions }
-   * 
+   *
+   * @return the subscriptions
    */
   public Account.Subscriptions createAccountSubscriptions() {
     return new Account.Subscriptions();
@@ -564,7 +632,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Transactions }
-   * 
+   *
+   * @return the transactions
    */
   public Account.Transactions createAccountTransactions() {
     return new Account.Transactions();
@@ -572,7 +641,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Username }
-   * 
+   *
+   * @return the username
    */
   public Account.Username createAccountUsername() {
     return new Account.Username();
@@ -580,7 +650,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.VatNumber }
-   * 
+   *
+   * @return the vat number
    */
   public Account.VatNumber createAccountVatNumber() {
     return new Account.VatNumber();
@@ -588,7 +659,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.TaxExempt }
-   * 
+   *
+   * @return the tax exempt
    */
   public Account.TaxExempt createAccountTaxExempt() {
     return new Account.TaxExempt();
@@ -596,7 +668,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.AcceptLanguage }
-   * 
+   *
+   * @return the accept language
    */
   public Account.AcceptLanguage createAccountAcceptLanguage() {
     return new Account.AcceptLanguage();
@@ -604,7 +677,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.CreatedAt }
-   * 
+   *
+   * @return the created at
    */
   public Account.CreatedAt createAccountCreatedAt() {
     return new Account.CreatedAt();
@@ -612,7 +686,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Address.Address2 }
-   * 
+   *
+   * @return the address2
    */
   public Account.Address.Address2 createAccountAddressAddress2() {
     return new Account.Address.Address2();
@@ -620,15 +695,17 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Account.Address.Phone }
-   * 
+   *
+   * @return the phone
    */
   public Account.Address.Phone createAccountAddressPhone() {
     return new Account.Address.Phone();
   }
 
   /**
-   * Create an instance of {@link Subscription }
-   * 
+   * Create an instance of {@link Subscription }.
+   *
+   * @return the subscription
    */
   public Subscription createSubscription() {
     return new Subscription();
@@ -636,7 +713,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.SubscriptionAddOns }
-   * 
+   *
+   * @return the subscription add ons
    */
   public Subscription.SubscriptionAddOns createSubscriptionSubscriptionAddOns() {
     return new Subscription.SubscriptionAddOns();
@@ -644,7 +722,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.Account }
-   * 
+   *
+   * @return the account
    */
   public Subscription.Account createSubscriptionAccount() {
     return new Subscription.Account();
@@ -652,7 +731,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.Invoice }
-   * 
+   *
+   * @return the invoice
    */
   public Subscription.Invoice createSubscriptionInvoice() {
     return new Subscription.Invoice();
@@ -660,7 +740,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.Plan }
-   * 
+   *
+   * @return the plan
    */
   public Subscription.Plan createSubscriptionPlan() {
     return new Subscription.Plan();
@@ -668,7 +749,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.UnitAmountInCents }
-   * 
+   *
+   * @return the unit amount in cents
    */
   public Subscription.UnitAmountInCents createSubscriptionUnitAmountInCents() {
     return new Subscription.UnitAmountInCents();
@@ -676,7 +758,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.Quantity }
-   * 
+   *
+   * @return the quantity
    */
   public Subscription.Quantity createSubscriptionQuantity() {
     return new Subscription.Quantity();
@@ -684,7 +767,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.ActivatedAt }
-   * 
+   *
+   * @return the activated at
    */
   public Subscription.ActivatedAt createSubscriptionActivatedAt() {
     return new Subscription.ActivatedAt();
@@ -692,7 +776,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.CanceledAt }
-   * 
+   *
+   * @return the current period started at
    */
 
   /**
@@ -705,7 +790,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.CurrentPeriodEndsAt }
-   * 
+   *
+   * @return the current period ends at
    */
   public Subscription.CurrentPeriodEndsAt createSubscriptionCurrentPeriodEndsAt() {
     return new Subscription.CurrentPeriodEndsAt();
@@ -713,7 +799,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.TrialStartedAt }
-   * 
+   *
+   * @return the tax in cents
    */
 
   /**
@@ -726,7 +813,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.TaxRate }
-   * 
+   *
+   * @return the tax rate
    */
   public Subscription.TaxRate createSubscriptionTaxRate() {
     return new Subscription.TaxRate();
@@ -734,7 +822,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.PoNumber }
-   * 
+   *
+   * @return the net terms
    */
 
   /**
@@ -747,7 +836,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.A }
-   * 
+   *
+   * @return the a
    */
   public Subscription.A createSubscriptionA() {
     return new Subscription.A();
@@ -755,7 +845,8 @@ public class ObjectFactory {
 
   /**
    * Create an instance of {@link Subscription.SubscriptionAddOns.SubscriptionAddOn }
-   * 
+   *
+   * @return the subscription add on
    */
   public Subscription.SubscriptionAddOns.SubscriptionAddOn createSubscriptionSubscriptionAddOnsSubscriptionAddOn() {
     return new Subscription.SubscriptionAddOns.SubscriptionAddOn();

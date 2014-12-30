@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for anonymous complex type.
@@ -239,8 +240,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlRootElement(name = "subscriptions")
 public class Subscriptions {
 
+  /** The subscription. */
   @XmlElement(required = true)
   protected Subscriptions.Subscription subscription;
+  
+  /** The type. */
   @XmlAttribute(name = "type")
   protected String type;
 
@@ -496,51 +500,98 @@ public class Subscriptions {
       "subscriptionAddOns", "a" })
   public static class Subscription {
 
+    /** The account. */
     @XmlElement(required = true)
     protected Subscriptions.Subscription.Account account;
+    
+    /** The invoice. */
     @XmlElement(required = true)
     protected Subscriptions.Subscription.Invoice invoice;
+    
+    /** The plan. */
     @XmlElement(required = true)
     protected Subscriptions.Subscription.Plan plan;
+    
+    /** The uuid. */
     @XmlElement(required = true)
     protected String uuid;
+    
+    /** The state. */
     @XmlElement(required = true)
     protected String state;
+    
+    /** The unit amount in cents. */
     @XmlElement(name = "unit_amount_in_cents", required = true)
     protected Subscriptions.Subscription.UnitAmountInCents unitAmountInCents;
+    
+    /** The currency. */
     @XmlElement(required = true)
     protected String currency;
+    
+    /** The quantity. */
     @XmlElement(required = true)
     protected Subscriptions.Subscription.Quantity quantity;
+    
+    /** The activated at. */
     @XmlElement(name = "activated_at", required = true)
     protected Subscriptions.Subscription.ActivatedAt activatedAt;
+    
+    /** The canceled at. */
     @XmlElement(name = "canceled_at", required = true)
     protected Subscriptions.Subscription.CanceledAt canceledAt;
+    
+    /** The expires at. */
     @XmlElement(name = "expires_at", required = true)
     protected Subscriptions.Subscription.ExpiresAt expiresAt;
+    
+    /** The current period started at. */
     @XmlElement(name = "current_period_started_at", required = true)
     protected Subscriptions.Subscription.CurrentPeriodStartedAt currentPeriodStartedAt;
+    
+    /** The current period ends at. */
     @XmlElement(name = "current_period_ends_at", required = true)
     protected Subscriptions.Subscription.CurrentPeriodEndsAt currentPeriodEndsAt;
+    
+    /** The trial started at. */
     @XmlElement(name = "trial_started_at", required = true)
     protected Subscriptions.Subscription.TrialStartedAt trialStartedAt;
+    
+    /** The trial ends at. */
     @XmlElement(name = "trial_ends_at", required = true)
     protected Subscriptions.Subscription.TrialEndsAt trialEndsAt;
+    
+    /** The tax in cents. */
     @XmlElement(name = "tax_in_cents", required = true)
     protected Subscriptions.Subscription.TaxInCents taxInCents;
+    
+    /** The tax type. */
     @XmlElement(name = "tax_type", required = true)
     protected String taxType;
+    
+    /** The tax region. */
     @XmlElement(name = "tax_region", required = true)
     protected String taxRegion;
+    
+    /** The tax rate. */
     @XmlElement(name = "tax_rate", required = true)
     protected Subscriptions.Subscription.TaxRate taxRate;
+    
+    /** The po number. */
     @XmlElement(name = "po_number", required = true)
     protected Subscriptions.Subscription.PoNumber poNumber;
+    
+    /** The net terms. */
     @XmlElement(name = "net_terms", required = true)
     protected Subscriptions.Subscription.NetTerms netTerms;
+    
+    /** The subscription add ons. */
     @XmlElement(name = "subscription_add_ons", required = true)
     protected Subscriptions.Subscription.SubscriptionAddOns subscriptionAddOns;
+    
+    /** The a. */
     protected List<Subscriptions.Subscription.A> a;
+    
+    /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
 
@@ -1024,8 +1075,8 @@ public class Subscriptions {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list {@link Subscriptions.Subscription.A }
-     * 
-     * 
+     *
+     * @return the a
      */
     public List<Subscriptions.Subscription.A> getA() {
       if (a == null) {
@@ -1080,12 +1131,19 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class A {
 
+      /** The value. */
       @XmlValue
       protected String value;
+      
+      /** The name. */
       @XmlAttribute(name = "name")
       protected String name;
+      
+      /** The href. */
       @XmlAttribute(name = "href")
       protected String href;
+      
+      /** The method. */
       @XmlAttribute(name = "method")
       protected String method;
 
@@ -1198,8 +1256,11 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class Account {
 
+      /** The value. */
       @XmlValue
       protected String value;
+      
+      /** The href. */
       @XmlAttribute(name = "href")
       protected String href;
 
@@ -1270,9 +1331,12 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class ActivatedAt {
 
+      /** The value. */
       @XmlValue
       @XmlSchemaType(name = "dateTime")
       protected XMLGregorianCalendar value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
@@ -1342,6 +1406,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class CanceledAt {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -1391,9 +1456,12 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class CurrentPeriodEndsAt {
 
+      /** The value. */
       @XmlValue
       @XmlSchemaType(name = "dateTime")
       protected XMLGregorianCalendar value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
@@ -1464,9 +1532,12 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class CurrentPeriodStartedAt {
 
+      /** The value. */
       @XmlValue
       @XmlSchemaType(name = "dateTime")
       protected XMLGregorianCalendar value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
@@ -1536,6 +1607,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class ExpiresAt {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -1585,8 +1657,11 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class Invoice {
 
+      /** The value. */
       @XmlValue
       protected String value;
+      
+      /** The href. */
       @XmlAttribute(name = "href")
       protected String href;
 
@@ -1657,14 +1732,18 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class NetTerms {
 
+      /** The value. */
       @XmlValue
       protected byte value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       * 
+       *
+       * @return the value
        */
       public byte getValue() {
         return value;
@@ -1672,7 +1751,8 @@ public class Subscriptions {
 
       /**
        * Sets the value of the value property.
-       * 
+       *
+       * @param value the new value
        */
       public void setValue(byte value) {
         this.value = value;
@@ -1728,10 +1808,15 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "planCode", "name" })
     public static class Plan {
 
+      /** The plan code. */
       @XmlElement(name = "plan_code", required = true)
       protected String planCode;
+      
+      /** The name. */
       @XmlElement(required = true)
       protected String name;
+      
+      /** The href. */
       @XmlAttribute(name = "href")
       protected String href;
 
@@ -1822,6 +1907,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class PoNumber {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -1871,14 +1957,18 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class Quantity {
 
+      /** The value. */
       @XmlValue
       protected byte value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       * 
+       *
+       * @return the value
        */
       public byte getValue() {
         return value;
@@ -1886,7 +1976,8 @@ public class Subscriptions {
 
       /**
        * Sets the value of the value property.
-       * 
+       *
+       * @param value the new value
        */
       public void setValue(byte value) {
         this.value = value;
@@ -1952,6 +2043,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "subscriptionAddOn" })
     public static class SubscriptionAddOns {
 
+      /** The subscription add on. */
       @XmlElement(name = "subscription_add_on")
       protected List<Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn> subscriptionAddOn;
 
@@ -1974,8 +2066,8 @@ public class Subscriptions {
        * <p>
        * Objects of the following type(s) are allowed in the list
        * {@link Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn }
-       * 
-       * 
+       *
+       * @return the subscription add on
        */
       public List<Subscriptions.Subscription.SubscriptionAddOns.SubscriptionAddOn> getSubscriptionAddOn() {
         if (subscriptionAddOn == null) {
@@ -2011,9 +2103,14 @@ public class Subscriptions {
       @XmlType(name = "", propOrder = { "addOnCode", "quantity", "unitAmountInCents" })
       public static class SubscriptionAddOn {
 
+        /** The add on code. */
         @XmlElement(name = "add_on_code", required = true)
         protected String addOnCode;
+        
+        /** The quantity. */
         protected byte quantity;
+        
+        /** The unit amount in cents. */
         @XmlElement(name = "unit_amount_in_cents")
         protected short unitAmountInCents;
 
@@ -2040,7 +2137,8 @@ public class Subscriptions {
 
         /**
          * Gets the value of the quantity property.
-         * 
+         *
+         * @return the quantity
          */
         public byte getQuantity() {
           return quantity;
@@ -2048,7 +2146,8 @@ public class Subscriptions {
 
         /**
          * Sets the value of the quantity property.
-         * 
+         *
+         * @param value the new quantity
          */
         public void setQuantity(byte value) {
           this.quantity = value;
@@ -2056,7 +2155,8 @@ public class Subscriptions {
 
         /**
          * Gets the value of the unitAmountInCents property.
-         * 
+         *
+         * @return the unit amount in cents
          */
         public short getUnitAmountInCents() {
           return unitAmountInCents;
@@ -2064,7 +2164,8 @@ public class Subscriptions {
 
         /**
          * Sets the value of the unitAmountInCents property.
-         * 
+         *
+         * @param value the new unit amount in cents
          */
         public void setUnitAmountInCents(short value) {
           this.unitAmountInCents = value;
@@ -2097,14 +2198,18 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class TaxInCents {
 
+      /** The value. */
       @XmlValue
       protected byte value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       * 
+       *
+       * @return the value
        */
       public byte getValue() {
         return value;
@@ -2112,7 +2217,8 @@ public class Subscriptions {
 
       /**
        * Sets the value of the value property.
-       * 
+       *
+       * @param value the new value
        */
       public void setValue(byte value) {
         this.value = value;
@@ -2164,14 +2270,18 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class TaxRate {
 
+      /** The value. */
       @XmlValue
       protected float value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       * 
+       *
+       * @return the value
        */
       public float getValue() {
         return value;
@@ -2179,7 +2289,8 @@ public class Subscriptions {
 
       /**
        * Sets the value of the value property.
-       * 
+       *
+       * @param value the new value
        */
       public void setValue(float value) {
         this.value = value;
@@ -2230,6 +2341,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class TrialEndsAt {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -2278,6 +2390,7 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class TrialStartedAt {
 
+      /** The value. */
       @XmlValue
       protected String value;
 
@@ -2327,14 +2440,18 @@ public class Subscriptions {
     @XmlType(name = "", propOrder = { "value" })
     public static class UnitAmountInCents {
 
+      /** The value. */
       @XmlValue
       protected short value;
+      
+      /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       * 
+       *
+       * @return the value
        */
       public short getValue() {
         return value;
@@ -2342,7 +2459,8 @@ public class Subscriptions {
 
       /**
        * Sets the value of the value property.
-       * 
+       *
+       * @param value the new value
        */
       public void setValue(short value) {
         this.value = value;
