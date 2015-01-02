@@ -75,12 +75,43 @@ public abstract class AbstractService {
    *           the recurly exception
    */
   protected <T, E> T call(String path, E payload, Class<T> responseClass, HttpMethod method) throws RecurlyException {
+    return call(path, payload, responseClass, method, null);
+  }
+
+  /**
+   * Call recurly API.
+   * 
+   * @param <T>
+   *          the generic type
+   * @param <E>
+   *          the element type
+   * @param path
+   *          the path
+   * @param payload
+   *          the payload
+   * @param responseClass
+   *          the response class
+   * @param method
+   *          the method
+   * @param headers
+   *          the headers
+   * @return the t
+   * @throws RecurlyException
+   *           the recurly exception
+   */
+  protected <T, E> T call(String path, E payload, Class<T> responseClass, HttpMethod method, HttpHeaders headers)
+        throws RecurlyException {
 
     URI uri = null;
     ResponseEntity<T> responseEntity = null;
     T reponse = null;
+    HttpEntity<?> entity = null;
     try {
-      HttpEntity<?> entity = new HttpEntity<>(payload, recurly.getRecurlyHeaders());
+      if (headers == null) {
+        entity = new HttpEntity<>(payload, recurly.getRecurlyHeaders());
+      } else {
+        entity = new HttpEntity<>(payload, headers);
+      }
       uri = new URI(URIUtil.encodeQuery(recurly.getRecurlyServerURL() + path, "UTF-8"));
       getLogger().debug("Calling Recurly URL {}, method: {}", uri.toString(), method.toString());
       responseEntity = restTemplate.exchange(uri, method, entity, responseClass);

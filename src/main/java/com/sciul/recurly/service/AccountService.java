@@ -57,7 +57,7 @@ public class AccountService extends AbstractService {
   }
 
   /**
-   * Post a pending charge/adjustments to an account.
+   * Post one or more pending charge(s)/adjustment(s) to an account.
    * 
    * @param invoice
    *          the invoice

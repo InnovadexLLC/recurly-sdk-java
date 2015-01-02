@@ -17,7 +17,7 @@ public class InvoiceNumber {
 
   /** The value. */
   @XmlValue
-  private short value;
+  private Integer value;
 
   /** The type. */
   @XmlAttribute(name = "type")
@@ -28,7 +28,7 @@ public class InvoiceNumber {
    * 
    * @return the value
    */
-  public short getValue() {
+  public Integer getValue() {
     return value;
   }
 
@@ -38,7 +38,7 @@ public class InvoiceNumber {
    * @param value
    *          the new value
    */
-  public void setValue(short value) {
+  public void setValue(Integer value) {
     this.value = value;
   }
 

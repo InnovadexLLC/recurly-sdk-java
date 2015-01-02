@@ -33,6 +33,9 @@ public class BillingConstants {
     /** The accounts. */
     ACCOUNTS("/v2/accounts"),
 
+    /** The invoice. */
+    V2INVOICES("/v2/invoices"),
+
     /** The invoices. */
     INVOICES("/invoices"),
 

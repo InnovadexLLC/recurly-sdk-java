@@ -27,6 +27,19 @@ public class RecurlyClientFactoryBean {
   @Autowired
   private TransactionService transactionService;
 
+  /** The Invoice service. */
+  @Autowired
+  private InvoiceService invoiceService;
+
+  /**
+   * Gets the invoice service.
+   * 
+   * @return the invoice service
+   */
+  public InvoiceService getInvoiceService() {
+    return invoiceService;
+  }
+
   /**
    * Gets the plans service.
    * 
