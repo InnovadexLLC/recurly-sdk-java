@@ -3,21 +3,21 @@ package com.sciul.recurly.helper;
 import org.springframework.stereotype.Component;
 
 import com.sciul.recurly.model.Account;
+import com.sciul.recurly.model.BypassHostedConfirmation;
+import com.sciul.recurly.model.EUR;
 import com.sciul.recurly.model.NetTerms;
+import com.sciul.recurly.model.Plan;
+import com.sciul.recurly.model.PlanIntervalLength;
 import com.sciul.recurly.model.PoNumber;
+import com.sciul.recurly.model.SetupFeeInCents;
 import com.sciul.recurly.model.Subscription;
 import com.sciul.recurly.model.SubscriptionAddOn;
 import com.sciul.recurly.model.SubscriptionAddOns;
-import com.sciul.recurly.model.generated.Plans.Plan;
-import com.sciul.recurly.model.generated.Plans.Plan.BypassHostedConfirmation;
-import com.sciul.recurly.model.generated.Plans.Plan.PlanIntervalLength;
-import com.sciul.recurly.model.generated.Plans.Plan.SetupFeeInCents;
-import com.sciul.recurly.model.generated.Plans.Plan.SuccessUrl;
-import com.sciul.recurly.model.generated.Plans.Plan.TaxExempt;
-import com.sciul.recurly.model.generated.Plans.Plan.TotalBillingCycles;
-import com.sciul.recurly.model.generated.Plans.Plan.UnitAmountInCents;
-import com.sciul.recurly.model.generated.Plans.Plan.UnitAmountInCents.EUR;
-import com.sciul.recurly.model.generated.Plans.Plan.UnitAmountInCents.USD;
+import com.sciul.recurly.model.SuccessUrl;
+import com.sciul.recurly.model.TaxExempt;
+import com.sciul.recurly.model.TotalBillingCycles;
+import com.sciul.recurly.model.USD;
+import com.sciul.recurly.model.UnitAmountInCents;
 
 /**
  * The Class BillingHelper.
@@ -97,12 +97,12 @@ public class BillingHelper {
     if (usd) {
       USD u = new USD();
       u.setValue(unitAmountInCentsForUSD);
-      amount.setUSD(u);
+      amount.setUsd(u);
     }
     if (eur) {
       EUR e = new EUR();
       e.setValue(unitAmountInCentsForEUR);
-      amount.setEUR(e);
+      amount.setEur(e);
     }
     plan.setUnitAmountInCents(amount);
   }
@@ -124,16 +124,14 @@ public class BillingHelper {
   public void setSetupFee(Plan plan, boolean usd, boolean eur, Integer setupFeeInCentsUSD, Integer setupFeeInCentsEUR) {
     SetupFeeInCents setupFee = new SetupFeeInCents();
     if (usd) {
-      com.sciul.recurly.model.generated.Plans.Plan.SetupFeeInCents.USD u =
-            new com.sciul.recurly.model.generated.Plans.Plan.SetupFeeInCents.USD();
+      USD u = new USD();
       u.setValue(setupFeeInCentsUSD);
-      setupFee.setUSD(u);
+      setupFee.setUsd(u);
     }
     if (eur) {
-      com.sciul.recurly.model.generated.Plans.Plan.SetupFeeInCents.EUR e =
-            new com.sciul.recurly.model.generated.Plans.Plan.SetupFeeInCents.EUR();
+      EUR e = new EUR();
       e.setValue(setupFeeInCentsEUR);
-      setupFee.setEUR(e);
+      setupFee.setEur(e);
     }
     plan.setSetupFeeInCents(setupFee);
   }
@@ -252,7 +250,7 @@ public class BillingHelper {
    *          the plan code
    */
   public void setSubscriptionPlan(Subscription subscription, String planCode) {
-    com.sciul.recurly.model.Plan plan = new com.sciul.recurly.model.Plan();
+    Plan plan = new Plan();
     plan.setPlanCode(planCode);
     subscription.setPlan(plan);
   }

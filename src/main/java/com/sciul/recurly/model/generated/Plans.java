@@ -17,11 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Plans.
- *
- * @author Gaurav
+ * 
  */
 /**
  * <p>
@@ -250,7 +248,7 @@ public class Plans {
   /** The plan. */
   @XmlElement(required = true)
   protected Plans.Plan plan;
-  
+
   /** The type. */
   @XmlAttribute(name = "type")
   protected String type;
@@ -516,91 +514,91 @@ public class Plans {
     /** The add ons. */
     @XmlElement(name = "add_ons", required = true)
     protected Plans.Plan.AddOns addOns;
-    
+
     /** The plan code. */
     @XmlElement(name = "plan_code", required = true)
     protected String planCode;
-    
+
     /** The name. */
     @XmlElement(required = true)
     protected String name;
-    
+
     /** The description. */
     @XmlElement(required = true)
     protected Plans.Plan.Description description;
-    
+
     /** The success url. */
     @XmlElement(name = "success_url", required = true)
     protected Plans.Plan.SuccessUrl successUrl;
-    
+
     /** The cancel url. */
     @XmlElement(name = "cancel_url", required = true)
     protected Plans.Plan.CancelUrl cancelUrl;
-    
+
     /** The display donation amounts. */
     @XmlElement(name = "display_donation_amounts", required = true)
     protected Plans.Plan.DisplayDonationAmounts displayDonationAmounts;
-    
+
     /** The display quantity. */
     @XmlElement(name = "display_quantity", required = true)
     protected Plans.Plan.DisplayQuantity displayQuantity;
-    
+
     /** The display phone number. */
     @XmlElement(name = "display_phone_number", required = true)
     protected Plans.Plan.DisplayPhoneNumber displayPhoneNumber;
-    
+
     /** The bypass hosted confirmation. */
     @XmlElement(name = "bypass_hosted_confirmation", required = true)
     protected Plans.Plan.BypassHostedConfirmation bypassHostedConfirmation;
-    
+
     /** The unit name. */
     @XmlElement(name = "unit_name", required = true)
     protected String unitName;
-    
+
     /** The payment page tos link. */
     @XmlElement(name = "payment_page_tos_link", required = true)
     protected Plans.Plan.PaymentPageTosLink paymentPageTosLink;
-    
+
     /** The plan interval length. */
     @XmlElement(name = "plan_interval_length", required = true)
     protected Plans.Plan.PlanIntervalLength planIntervalLength;
-    
+
     /** The plan interval unit. */
     @XmlElement(name = "plan_interval_unit", required = true)
     protected String planIntervalUnit;
-    
+
     /** The trial interval length. */
     @XmlElement(name = "trial_interval_length", required = true)
     protected Plans.Plan.TrialIntervalLength trialIntervalLength;
-    
+
     /** The trial interval unit. */
     @XmlElement(name = "trial_interval_unit", required = true)
     protected String trialIntervalUnit;
-    
+
     /** The accounting code. */
     @XmlElement(name = "accounting_code", required = true)
     protected Plans.Plan.AccountingCode accountingCode;
-    
+
     /** The total billing cycles. */
     @XmlElement(name = "total_billing_cycles", required = true)
     protected Plans.Plan.TotalBillingCycles totalBillingCycles;
-    
+
     /** The created at. */
     @XmlElement(name = "created_at", required = true)
     protected Plans.Plan.CreatedAt createdAt;
-    
+
     /** The tax exempt. */
     @XmlElement(name = "tax_exempt", required = true)
     protected Plans.Plan.TaxExempt taxExempt;
-    
+
     /** The unit amount in cents. */
     @XmlElement(name = "unit_amount_in_cents", required = true)
     protected Plans.Plan.UnitAmountInCents unitAmountInCents;
-    
+
     /** The setup fee in cents. */
     @XmlElement(name = "setup_fee_in_cents", required = true)
     protected Plans.Plan.SetupFeeInCents setupFeeInCents;
-    
+
     /** The href. */
     @XmlAttribute(name = "href")
     protected String href;
@@ -1198,7 +1196,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The href. */
       @XmlAttribute(name = "href")
       protected String href;
@@ -1273,7 +1271,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -1399,7 +1397,7 @@ public class Plans {
       @XmlValue
       @XmlSchemaType(name = "dateTime")
       protected XMLGregorianCalendar value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -1524,7 +1522,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -1599,7 +1597,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -1674,7 +1672,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -1799,14 +1797,14 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected Integer value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       *
+       * 
        * @return the value
        */
       public Integer getValue() {
@@ -1815,8 +1813,9 @@ public class Plans {
 
       /**
        * Sets the value of the value property.
-       *
-       * @param value the new value
+       * 
+       * @param value
+       *          the new value
        */
       public void setValue(Integer value) {
         this.value = value;
@@ -1890,7 +1889,7 @@ public class Plans {
       /** The usd. */
       @XmlElement(name = "USD", required = true)
       protected Plans.Plan.SetupFeeInCents.USD usd;
-      
+
       /** The eur. */
       @XmlElement(name = "EUR", required = true)
       protected Plans.Plan.SetupFeeInCents.EUR eur;
@@ -1963,14 +1962,14 @@ public class Plans {
         /** The value. */
         @XmlValue
         protected Integer value;
-        
+
         /** The type. */
         @XmlAttribute(name = "type")
         protected String type;
 
         /**
          * Gets the value of the value property.
-         *
+         * 
          * @return the value
          */
         public Integer getValue() {
@@ -1979,8 +1978,9 @@ public class Plans {
 
         /**
          * Sets the value of the value property.
-         *
-         * @param value the new value
+         * 
+         * @param value
+         *          the new value
          */
         public void setValue(Integer value) {
           this.value = value;
@@ -2035,14 +2035,14 @@ public class Plans {
         /** The value. */
         @XmlValue
         protected Integer value;
-        
+
         /** The type. */
         @XmlAttribute(name = "type")
         protected String type;
 
         /**
          * Gets the value of the value property.
-         *
+         * 
          * @return the value
          */
         public Integer getValue() {
@@ -2051,8 +2051,9 @@ public class Plans {
 
         /**
          * Sets the value of the value property.
-         *
-         * @param value the new value
+         * 
+         * @param value
+         *          the new value
          */
         public void setValue(Integer value) {
           this.value = value;
@@ -2159,7 +2160,7 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected String value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
@@ -2234,14 +2235,14 @@ public class Plans {
       /** The value. */
       @XmlValue
       protected byte value;
-      
+
       /** The type. */
       @XmlAttribute(name = "type")
       protected String type;
 
       /**
        * Gets the value of the value property.
-       *
+       * 
        * @return the value
        */
       public byte getValue() {
@@ -2250,8 +2251,9 @@ public class Plans {
 
       /**
        * Sets the value of the value property.
-       *
-       * @param value the new value
+       * 
+       * @param value
+       *          the new value
        */
       public void setValue(byte value) {
         this.value = value;
@@ -2325,7 +2327,7 @@ public class Plans {
       /** The usd. */
       @XmlElement(name = "USD", required = true)
       protected Plans.Plan.UnitAmountInCents.USD usd;
-      
+
       /** The eur. */
       @XmlElement(name = "EUR", required = true)
       protected Plans.Plan.UnitAmountInCents.EUR eur;
@@ -2398,14 +2400,14 @@ public class Plans {
         /** The value. */
         @XmlValue
         protected Integer value;
-        
+
         /** The type. */
         @XmlAttribute(name = "type")
         protected String type;
 
         /**
          * Gets the value of the value property.
-         *
+         * 
          * @return the value
          */
         public Integer getValue() {
@@ -2414,8 +2416,9 @@ public class Plans {
 
         /**
          * Sets the value of the value property.
-         *
-         * @param value the new value
+         * 
+         * @param value
+         *          the new value
          */
         public void setValue(Integer value) {
           this.value = value;
@@ -2470,14 +2473,14 @@ public class Plans {
         /** The value. */
         @XmlValue
         protected Integer value;
-        
+
         /** The type. */
         @XmlAttribute(name = "type")
         protected String type;
 
         /**
          * Gets the value of the value property.
-         *
+         * 
          * @return the value
          */
         public Integer getValue() {
@@ -2486,8 +2489,9 @@ public class Plans {
 
         /**
          * Sets the value of the value property.
-         *
-         * @param value the new value
+         * 
+         * @param value
+         *          the new value
          */
         public void setValue(Integer value) {
           this.value = value;
