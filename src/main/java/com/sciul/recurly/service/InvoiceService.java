@@ -7,11 +7,10 @@ import java.io.UnsupportedEncodingException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
 
-import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
 
@@ -19,13 +18,11 @@ import com.sciul.recurly.helper.BillingConstants;
  * @author GauravChawla
  * 
  */
+@Service
 public class InvoiceService extends AbstractService {
 
   /** The logger. */
   private static Logger logger = LoggerFactory.getLogger(InvoiceService.class);
-
-  @Autowired
-  private RecurlyConfiguration recurly;
 
   @Override
   public Logger getLogger() {

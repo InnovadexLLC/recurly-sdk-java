@@ -46,7 +46,7 @@ public abstract class AbstractService {
 
   /** The recurly. */
   @Autowired
-  private RecurlyConfiguration recurly;
+  protected RecurlyConfiguration recurly;
 
   /** The sns client. */
   @Autowired

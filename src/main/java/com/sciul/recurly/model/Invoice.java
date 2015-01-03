@@ -23,19 +23,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Invoice {
 
   /** The account. */
-  @XmlElement(required = true)
+  @XmlElement
   private Account account;
 
   /** The subscription. */
-  @XmlElement(required = true)
+  @XmlElement
   private Subscription subscription;
 
   /** The uuid. */
-  @XmlElement(required = true)
+  @XmlElement
   private String uuid;
 
   /** The state. */
-  @XmlElement(required = true)
+  @XmlElement
   private String state;
 
   /** The invoice number. */
