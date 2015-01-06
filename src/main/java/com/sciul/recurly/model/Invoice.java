@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -14,11 +15,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * 
  * @author GauravChawla
  */
-@JsonIgnoreProperties
+@JsonIgnoreProperties(ignoreUnknown = true)
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "account", "subscription", "uuid", "state", "invoiceNumber", "poNumber", "vatNumber",
-    "subtotalInCents", "taxInCents", "totalInCents", "currency", "createdAt", "closedAt", "taxType", "taxRegion",
-    "taxRate", "netTerms", "collectionMethod", "redemption", "lineItems", "transactions" })
+@XmlType(name = "", propOrder = {})
 @XmlRootElement(name = "invoice")
 public class Invoice {
 
@@ -109,6 +108,28 @@ public class Invoice {
   /** The href. */
   @XmlAttribute(name = "href")
   private String href;
+
+  @XmlElement(name = "subscription_id")
+  private String subscriptionId;
+
+  @XmlElement(name = "date")
+  private XMLGregorianCalendar date;
+
+  public String getSubscriptionId() {
+    return subscriptionId;
+  }
+
+  public void setSubscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+  }
+
+  public XMLGregorianCalendar getDate() {
+    return date;
+  }
+
+  public void setDate(XMLGregorianCalendar date) {
+    this.date = date;
+  }
 
   /**
    * Gets the account.
