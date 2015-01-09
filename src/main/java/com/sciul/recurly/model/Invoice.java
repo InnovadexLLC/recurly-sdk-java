@@ -10,6 +10,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Invoice.
  * 
@@ -39,27 +40,27 @@ public class Invoice {
 
   /** The invoice number. */
   @XmlElement(name = "invoice_number")
-  private InvoiceNumber invoiceNumber;
+  private Integer invoiceNumber;
 
   /** The po number. */
   @XmlElement(name = "po_number")
-  private PoNumber poNumber;
+  private String poNumber;
 
   /** The vat number. */
   @XmlElement(name = "vat_number")
-  private VatNumber vatNumber;
+  private String vatNumber;
 
   /** The subtotal in cents. */
   @XmlElement(name = "subtotal_in_cents")
-  private SubtotalInCents subtotalInCents;
+  private Integer subtotalInCents;
 
   /** The tax in cents. */
   @XmlElement(name = "tax_in_cents")
-  private TaxInCents taxInCents;
+  private Integer taxInCents;
 
   /** The total in cents. */
   @XmlElement(name = "total_in_cents")
-  private TotalInCents totalInCents;
+  private Integer totalInCents;
 
   /** The currency. */
   @XmlElement(name = "currency")
@@ -83,11 +84,11 @@ public class Invoice {
 
   /** The tax rate. */
   @XmlElement(name = "tax_rate")
-  private TaxRate taxRate;
+  private Double taxRate;
 
   /** The net terms. */
   @XmlElement(name = "net_terms")
-  private NetTerms netTerms;
+  private Integer netTerms;
 
   /** The collection method. */
   @XmlElement(name = "collection_method")
@@ -109,24 +110,48 @@ public class Invoice {
   @XmlAttribute(name = "href")
   private String href;
 
+  /** The subscription id. */
   @XmlElement(name = "subscription_id")
   private String subscriptionId;
 
+  /** The date. */
   @XmlElement(name = "date")
   private XMLGregorianCalendar date;
 
+  /**
+   * Gets the subscription id.
+   * 
+   * @return the subscription id
+   */
   public String getSubscriptionId() {
     return subscriptionId;
   }
 
+  /**
+   * Sets the subscription id.
+   * 
+   * @param subscriptionId
+   *          the new subscription id
+   */
   public void setSubscriptionId(String subscriptionId) {
     this.subscriptionId = subscriptionId;
   }
 
+  /**
+   * Gets the date.
+   * 
+   * @return the date
+   */
   public XMLGregorianCalendar getDate() {
     return date;
   }
 
+  /**
+   * Sets the date.
+   * 
+   * @param date
+   *          the new date
+   */
   public void setDate(XMLGregorianCalendar date) {
     this.date = date;
   }
@@ -212,7 +237,7 @@ public class Invoice {
    * 
    * @return the invoice number
    */
-  public InvoiceNumber getInvoiceNumber() {
+  public Integer getInvoiceNumber() {
     return invoiceNumber;
   }
 
@@ -222,7 +247,7 @@ public class Invoice {
    * @param invoiceNumber
    *          the new invoice number
    */
-  public void setInvoiceNumber(InvoiceNumber invoiceNumber) {
+  public void setInvoiceNumber(Integer invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
   }
 
@@ -231,7 +256,7 @@ public class Invoice {
    * 
    * @return the po number
    */
-  public PoNumber getPoNumber() {
+  public String getPoNumber() {
     return poNumber;
   }
 
@@ -241,7 +266,7 @@ public class Invoice {
    * @param poNumber
    *          the new po number
    */
-  public void setPoNumber(PoNumber poNumber) {
+  public void setPoNumber(String poNumber) {
     this.poNumber = poNumber;
   }
 
@@ -250,7 +275,7 @@ public class Invoice {
    * 
    * @return the vat number
    */
-  public VatNumber getVatNumber() {
+  public String getVatNumber() {
     return vatNumber;
   }
 
@@ -260,7 +285,7 @@ public class Invoice {
    * @param vatNumber
    *          the new vat number
    */
-  public void setVatNumber(VatNumber vatNumber) {
+  public void setVatNumber(String vatNumber) {
     this.vatNumber = vatNumber;
   }
 
@@ -269,7 +294,7 @@ public class Invoice {
    * 
    * @return the subtotal in cents
    */
-  public SubtotalInCents getSubtotalInCents() {
+  public Integer getSubtotalInCents() {
     return subtotalInCents;
   }
 
@@ -279,7 +304,7 @@ public class Invoice {
    * @param subtotalInCents
    *          the new subtotal in cents
    */
-  public void setSubtotalInCents(SubtotalInCents subtotalInCents) {
+  public void setSubtotalInCents(Integer subtotalInCents) {
     this.subtotalInCents = subtotalInCents;
   }
 
@@ -288,7 +313,7 @@ public class Invoice {
    * 
    * @return the tax in cents
    */
-  public TaxInCents getTaxInCents() {
+  public Integer getTaxInCents() {
     return taxInCents;
   }
 
@@ -298,7 +323,7 @@ public class Invoice {
    * @param taxInCents
    *          the new tax in cents
    */
-  public void setTaxInCents(TaxInCents taxInCents) {
+  public void setTaxInCents(Integer taxInCents) {
     this.taxInCents = taxInCents;
   }
 
@@ -307,7 +332,7 @@ public class Invoice {
    * 
    * @return the total in cents
    */
-  public TotalInCents getTotalInCents() {
+  public Integer getTotalInCents() {
     return totalInCents;
   }
 
@@ -317,7 +342,7 @@ public class Invoice {
    * @param totalInCents
    *          the new total in cents
    */
-  public void setTotalInCents(TotalInCents totalInCents) {
+  public void setTotalInCents(Integer totalInCents) {
     this.totalInCents = totalInCents;
   }
 
@@ -421,7 +446,7 @@ public class Invoice {
    * 
    * @return the tax rate
    */
-  public TaxRate getTaxRate() {
+  public Double getTaxRate() {
     return taxRate;
   }
 
@@ -431,7 +456,7 @@ public class Invoice {
    * @param taxRate
    *          the new tax rate
    */
-  public void setTaxRate(TaxRate taxRate) {
+  public void setTaxRate(Double taxRate) {
     this.taxRate = taxRate;
   }
 
@@ -440,7 +465,7 @@ public class Invoice {
    * 
    * @return the net terms
    */
-  public NetTerms getNetTerms() {
+  public Integer getNetTerms() {
     return netTerms;
   }
 
@@ -450,7 +475,7 @@ public class Invoice {
    * @param netTerms
    *          the new net terms
    */
-  public void setNetTerms(NetTerms netTerms) {
+  public void setNetTerms(Integer netTerms) {
     this.netTerms = netTerms;
   }
 

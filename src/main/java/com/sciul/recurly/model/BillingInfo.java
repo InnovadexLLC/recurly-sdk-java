@@ -17,78 +17,76 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "account", "firstName", "lastName", "company", "address1", "address2", "city",
-    "state", "zip", "country", "phone", "vatNumber", "ipAddress", "ipAddressCountry", "cardType", "year", "month",
-    "firstSix", "lastFour" })
+@XmlType(name = "", propOrder = {})
 @XmlRootElement(name = "billing_info")
 public class BillingInfo {
 
   /** The account. */
-  @XmlElement(required = true)
+  @XmlElement
   private Account account;
 
   /** The first name. */
-  @XmlElement(name = "first_name", required = true)
+  @XmlElement(name = "first_name")
   private String firstName;
 
   /** The last name. */
-  @XmlElement(name = "last_name", required = true)
+  @XmlElement(name = "last_name")
   private String lastName;
 
   /** The company. */
-  @XmlElement(required = true)
-  private Company company;
+  @XmlElement
+  private String company;
 
   /** The address1. */
-  @XmlElement(required = true)
+  @XmlElement
   private String address1;
 
   /** The address2. */
-  @XmlElement(required = true)
-  private Address2 address2;
+  @XmlElement
+  private String address2;
 
   /** The city. */
-  @XmlElement(required = true)
+  @XmlElement
   private String city;
 
   /** The state. */
-  @XmlElement(required = true)
+  @XmlElement
   private String state;
 
   /** The zip. */
-  private int zip;
+  private String zip;
 
   /** The country. */
-  @XmlElement(required = true)
+  @XmlElement
   private String country;
 
   /** The phone. */
-  @XmlElement(required = true)
-  private Phone phone;
+  @XmlElement
+  private String phone;
 
   /** The vat number. */
-  @XmlElement(name = "vat_number", required = true)
+  @XmlElement(name = "vat_number")
   private String vatNumber;
 
   /** The ip address. */
-  @XmlElement(name = "ip_address", required = true)
+  @XmlElement(name = "ip_address")
   private String ipAddress;
 
   /** The ip address country. */
-  @XmlElement(name = "ip_address_country", required = true)
+  @XmlElement(name = "ip_address_country")
   private String ipAddressCountry;
 
   /** The card type. */
-  @XmlElement(name = "card_type", required = true)
+  @XmlElement(name = "card_type")
   private String cardType;
 
   /** The year. */
-  @XmlElement(required = true)
-  private Year year;
+  @XmlElement
+  private short year;
 
   /** The month. */
-  @XmlElement(required = true)
-  private Month month;
+  @XmlElement
+  private short month;
 
   /** The first six. */
   @XmlElement(name = "first_six")
@@ -169,7 +167,7 @@ public class BillingInfo {
    * 
    * @return the company
    */
-  public Company getCompany() {
+  public String getCompany() {
     return company;
   }
 
@@ -179,7 +177,7 @@ public class BillingInfo {
    * @param company
    *          the new company
    */
-  public void setCompany(Company company) {
+  public void setCompany(String company) {
     this.company = company;
   }
 
@@ -207,7 +205,7 @@ public class BillingInfo {
    * 
    * @return the address2
    */
-  public Address2 getAddress2() {
+  public String getAddress2() {
     return address2;
   }
 
@@ -217,7 +215,7 @@ public class BillingInfo {
    * @param address2
    *          the new address2
    */
-  public void setAddress2(Address2 address2) {
+  public void setAddress2(String address2) {
     this.address2 = address2;
   }
 
@@ -264,7 +262,7 @@ public class BillingInfo {
    * 
    * @return the zip
    */
-  public int getZip() {
+  public String getZip() {
     return zip;
   }
 
@@ -274,7 +272,7 @@ public class BillingInfo {
    * @param zip
    *          the new zip
    */
-  public void setZip(int zip) {
+  public void setZip(String zip) {
     this.zip = zip;
   }
 
@@ -302,7 +300,7 @@ public class BillingInfo {
    * 
    * @return the phone
    */
-  public Phone getPhone() {
+  public String getPhone() {
     return phone;
   }
 
@@ -312,7 +310,7 @@ public class BillingInfo {
    * @param phone
    *          the new phone
    */
-  public void setPhone(Phone phone) {
+  public void setPhone(String phone) {
     this.phone = phone;
   }
 
@@ -397,7 +395,7 @@ public class BillingInfo {
    * 
    * @return the year
    */
-  public Year getYear() {
+  public short getYear() {
     return year;
   }
 
@@ -407,7 +405,7 @@ public class BillingInfo {
    * @param year
    *          the new year
    */
-  public void setYear(Year year) {
+  public void setYear(short year) {
     this.year = year;
   }
 
@@ -416,7 +414,7 @@ public class BillingInfo {
    * 
    * @return the month
    */
-  public Month getMonth() {
+  public short getMonth() {
     return month;
   }
 
@@ -426,7 +424,7 @@ public class BillingInfo {
    * @param month
    *          the new month
    */
-  public void setMonth(Month month) {
+  public void setMonth(short month) {
     this.month = month;
   }
 

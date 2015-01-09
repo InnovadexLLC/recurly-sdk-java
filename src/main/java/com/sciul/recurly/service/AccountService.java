@@ -91,6 +91,21 @@ public class AccountService extends AbstractService {
   }
 
   /**
+   * Get billingInfo
+   * 
+   * @param accountCode
+   *          the account code
+   * @return the billing info
+   * @throws RecurlyException
+   *           the recurly exception
+   */
+  public BillingInfo getBillingInfo(String accountCode) throws RecurlyException {
+
+    return call(BillingConstants.RecurlyApiPath.ACCOUNTS.toString() + "/" + accountCode
+          + BillingConstants.RecurlyApiPath.BILLING_INFO.toString(), null, BillingInfo.class, HttpMethod.GET);
+  }
+
+  /**
    * Creates the adjustment to an account.
    * 
    * @param adjustment

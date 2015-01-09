@@ -11,36 +11,36 @@ import javax.xml.bind.annotation.XmlType;
  * @author GauravChawla
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "address1", "address2", "city", "state", "zip", "country", "phone" })
+@XmlType(name = "", propOrder = {})
 public class Address {
 
   /** The address1. */
-  @XmlElement(required = true)
+  @XmlElement
   private String address1;
 
   /** The address2. */
-  @XmlElement(required = true)
-  private Address2 address2;
+  @XmlElement
+  private String address2;
 
   /** The city. */
-  @XmlElement(required = true)
+  @XmlElement
   private String city;
 
   /** The state. */
-  @XmlElement(required = true)
+  @XmlElement
   private String state;
 
   /** The zip. */
-  @XmlElement(required = true)
+  @XmlElement
   private int zip;
 
   /** The country. */
-  @XmlElement(required = true)
+  @XmlElement
   private String country;
 
   /** The phone. */
-  @XmlElement(required = true)
-  private Phone phone;
+  @XmlElement
+  private String phone;
 
   /**
    * Gets the address1.
@@ -66,7 +66,7 @@ public class Address {
    * 
    * @return the address2
    */
-  public Address2 getAddress2() {
+  public String getAddress2() {
     return address2;
   }
 
@@ -76,7 +76,7 @@ public class Address {
    * @param address2
    *          the new address2
    */
-  public void setAddress2(Address2 address2) {
+  public void setAddress2(String address2) {
     this.address2 = address2;
   }
 
@@ -161,7 +161,7 @@ public class Address {
    * 
    * @return the phone
    */
-  public Phone getPhone() {
+  public String getPhone() {
     return phone;
   }
 
@@ -171,7 +171,7 @@ public class Address {
    * @param phone
    *          the new phone
    */
-  public void setPhone(Phone phone) {
+  public void setPhone(String phone) {
     this.phone = phone;
   }
 

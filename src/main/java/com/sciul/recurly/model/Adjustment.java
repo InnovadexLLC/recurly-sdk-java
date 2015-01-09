@@ -7,15 +7,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Adjustment.
  * 
  * @author GauravChawla
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "account", "invoice", "subscription", "uuid", "description", "accountingCode",
-    "productCode", "origin", "unitAmountInCents", "quantity", "discountInCents", "taxInCents", "totalInCents",
-    "currency", "taxExempt", "startDate", "endDate", "createdAt" })
+@XmlType(name = "", propOrder = {})
 @XmlRootElement(name = "adjustment")
 public class Adjustment {
 
@@ -41,7 +40,7 @@ public class Adjustment {
 
   /** The accounting code. */
   @XmlElement(name = "accounting_code")
-  private AccountingCode accountingCode;
+  private String accountingCode;
 
   /** The product code. */
   @XmlElement(name = "product_code")
@@ -57,19 +56,19 @@ public class Adjustment {
 
   /** The quantity. */
   @XmlElement
-  private Quantity quantity;
+  private Integer quantity;
 
   /** The discount in cents. */
   @XmlElement(name = "discount_in_cents")
-  private DiscountInCents discountInCents;
+  private Integer discountInCents;
 
   /** The tax in cents. */
   @XmlElement(name = "tax_in_cents")
-  private TaxInCents taxInCents;
+  private Integer taxInCents;
 
   /** The total in cents. */
   @XmlElement(name = "total_in_cents")
-  private TotalInCents totalInCents;
+  private Integer totalInCents;
 
   /** The currency. */
   @XmlElement
@@ -77,7 +76,7 @@ public class Adjustment {
 
   /** The tax exempt. */
   @XmlElement(name = "tax_exempt")
-  private TaxExempt taxExempt;
+  private Boolean taxExempt;
 
   /** The start date. */
   @XmlElement(name = "start_date")
@@ -199,7 +198,7 @@ public class Adjustment {
    * 
    * @return the accounting code
    */
-  public AccountingCode getAccountingCode() {
+  public String getAccountingCode() {
     return accountingCode;
   }
 
@@ -209,7 +208,7 @@ public class Adjustment {
    * @param accountingCode
    *          the new accounting code
    */
-  public void setAccountingCode(AccountingCode accountingCode) {
+  public void setAccountingCode(String accountingCode) {
     this.accountingCode = accountingCode;
   }
 
@@ -275,7 +274,7 @@ public class Adjustment {
    * 
    * @return the quantity
    */
-  public Quantity getQuantity() {
+  public Integer getQuantity() {
     return quantity;
   }
 
@@ -285,7 +284,7 @@ public class Adjustment {
    * @param quantity
    *          the new quantity
    */
-  public void setQuantity(Quantity quantity) {
+  public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
@@ -294,7 +293,7 @@ public class Adjustment {
    * 
    * @return the discount in cents
    */
-  public DiscountInCents getDiscountInCents() {
+  public Integer getDiscountInCents() {
     return discountInCents;
   }
 
@@ -304,7 +303,7 @@ public class Adjustment {
    * @param discountInCents
    *          the new discount in cents
    */
-  public void setDiscountInCents(DiscountInCents discountInCents) {
+  public void setDiscountInCents(Integer discountInCents) {
     this.discountInCents = discountInCents;
   }
 
@@ -313,7 +312,7 @@ public class Adjustment {
    * 
    * @return the tax in cents
    */
-  public TaxInCents getTaxInCents() {
+  public Integer getTaxInCents() {
     return taxInCents;
   }
 
@@ -323,7 +322,7 @@ public class Adjustment {
    * @param taxInCents
    *          the new tax in cents
    */
-  public void setTaxInCents(TaxInCents taxInCents) {
+  public void setTaxInCents(Integer taxInCents) {
     this.taxInCents = taxInCents;
   }
 
@@ -332,7 +331,7 @@ public class Adjustment {
    * 
    * @return the total in cents
    */
-  public TotalInCents getTotalInCents() {
+  public Integer getTotalInCents() {
     return totalInCents;
   }
 
@@ -342,7 +341,7 @@ public class Adjustment {
    * @param totalInCents
    *          the new total in cents
    */
-  public void setTotalInCents(TotalInCents totalInCents) {
+  public void setTotalInCents(Integer totalInCents) {
     this.totalInCents = totalInCents;
   }
 
@@ -370,7 +369,7 @@ public class Adjustment {
    * 
    * @return the tax exempt
    */
-  public TaxExempt getTaxExempt() {
+  public Boolean getTaxExempt() {
     return taxExempt;
   }
 
@@ -380,7 +379,7 @@ public class Adjustment {
    * @param taxExempt
    *          the new tax exempt
    */
-  public void setTaxExempt(TaxExempt taxExempt) {
+  public void setTaxExempt(Boolean taxExempt) {
     this.taxExempt = taxExempt;
   }
 

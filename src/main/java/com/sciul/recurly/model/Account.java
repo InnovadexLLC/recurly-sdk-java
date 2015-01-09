@@ -16,9 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "adjustments", "billingInfo", "invoices", "redemption", "subscriptions",
-    "transactions", "accountCode", "state", "username", "email", "firstName", "lastName", "companyName", "vatNumber",
-    "taxExempt", "address", "acceptLanguage", "hostedLoginToken", "createdAt" })
+@XmlType(name = "", propOrder = {})
 @XmlRootElement(name = "account")
 public class Account {
 
@@ -76,11 +74,11 @@ public class Account {
 
   /** The vat number. */
   @XmlElement(name = "vat_number")
-  private VatNumber vatNumber;
+  private String vatNumber;
 
   /** The tax exempt. */
   @XmlElement(name = "tax_exempt")
-  private TaxExempt taxExempt;
+  private Boolean taxExempt;
 
   /** The address. */
   @XmlElement
@@ -354,7 +352,7 @@ public class Account {
    * 
    * @return the vat number
    */
-  public VatNumber getVatNumber() {
+  public String getVatNumber() {
     return vatNumber;
   }
 
@@ -364,7 +362,7 @@ public class Account {
    * @param vatNumber
    *          the new vat number
    */
-  public void setVatNumber(VatNumber vatNumber) {
+  public void setVatNumber(String vatNumber) {
     this.vatNumber = vatNumber;
   }
 
@@ -373,7 +371,7 @@ public class Account {
    * 
    * @return the tax exempt
    */
-  public TaxExempt getTaxExempt() {
+  public Boolean getTaxExempt() {
     return taxExempt;
   }
 
@@ -383,7 +381,7 @@ public class Account {
    * @param taxExempt
    *          the new tax exempt
    */
-  public void setTaxExempt(TaxExempt taxExempt) {
+  public void setTaxExempt(Boolean taxExempt) {
     this.taxExempt = taxExempt;
   }
 
