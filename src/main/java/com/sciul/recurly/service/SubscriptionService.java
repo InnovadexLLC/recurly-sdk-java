@@ -20,7 +20,6 @@ import com.sciul.recurly.model.Subscription;
 public class SubscriptionService extends AbstractService {
 
   /** The logger. */
-  @SuppressWarnings("unused")
   private static Logger logger = LoggerFactory.getLogger(SubscriptionService.class);
 
   /** The billing helper. */

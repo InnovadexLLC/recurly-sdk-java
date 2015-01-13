@@ -18,7 +18,6 @@ import com.sciul.recurly.model.Transaction;
 public class TransactionService extends AbstractService {
 
   /** The logger. */
-  @SuppressWarnings("unused")
   private static Logger logger = LoggerFactory.getLogger(TransactionService.class);
 
   @Override
