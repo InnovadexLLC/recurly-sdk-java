@@ -4,17 +4,15 @@ import java.io.UnsupportedEncodingException;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.StringUtils;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpHeaders;
+
+import com.sciul.recurly.proxies.Notifier;
 
 /**
  * The Class RecurlyConfiguration.
  * 
- * @author gaurav
+ * @author GauravChawla
  */
-@Configuration
-@Scope("singleton")
 public class RecurlyConfiguration {
 
   /** The api key. */
@@ -23,14 +21,8 @@ public class RecurlyConfiguration {
   /** The recurly server url. */
   private String recurlyServerURL;
 
-  /** The sns topic. */
-  private String snsTopic;
-
-  /** The aws topic region. */
-  private String awsTopicRegion;
-
-  /** The notify email id. */
-  private String channel;
+  /** The error notifier. */
+  private Notifier errorNotifier;
 
   /**
    * Instantiates a new recurly configuration.
@@ -43,6 +35,22 @@ public class RecurlyConfiguration {
   public RecurlyConfiguration(String apiKey, String recurlyServerURL) {
     this.apiKey = apiKey;
     this.recurlyServerURL = recurlyServerURL;
+  }
+
+  /**
+   * Instantiates a new recurly configuration.
+   * 
+   * @param apiKey
+   *          the api key
+   * @param recurlyServerURL
+   *          the recurly server url
+   * @param errorNotifier
+   *          the error notifier
+   */
+  public RecurlyConfiguration(String apiKey, String recurlyServerURL, Notifier errorNotifier) {
+    this.apiKey = apiKey;
+    this.recurlyServerURL = recurlyServerURL;
+    this.errorNotifier = errorNotifier;
   }
 
   /**
@@ -90,60 +98,22 @@ public class RecurlyConfiguration {
   }
 
   /**
-   * Gets the sns topic.
+   * Gets the error notifier.
    * 
-   * @return the sns topic
+   * @return the error notifier
    */
-  public String getSnsTopic() {
-    return snsTopic;
+  public Notifier getErrorNotifier() {
+    return errorNotifier;
   }
 
   /**
-   * Sets the sns topic.
+   * Sets the error notifier.
    * 
-   * @param snsTopic
-   *          the new sns topic
+   * @param errorNotifier
+   *          the new error notifier
    */
-  public void setSnsTopic(String snsTopic) {
-    this.snsTopic = snsTopic;
-  }
-
-  /**
-   * Gets the aws topic region.
-   * 
-   * @return the aws topic region
-   */
-  public String getAwsTopicRegion() {
-    return awsTopicRegion;
-  }
-
-  /**
-   * Sets the aws topic region.
-   * 
-   * @param awsTopicRegion
-   *          the new aws topic region
-   */
-  public void setAwsTopicRegion(String awsTopicRegion) {
-    this.awsTopicRegion = awsTopicRegion;
-  }
-
-  /**
-   * Gets the slack channel.
-   * 
-   * @return channel
-   */
-  public String getChannel() {
-    return channel;
-  }
-
-  /**
-   * Sets the slack channel.
-   * 
-   * @param channel
-   *          the slack channel
-   */
-  public void setChannel(String channel) {
-    this.channel = channel;
+  public void setErrorNotifier(Notifier errorNotifier) {
+    this.errorNotifier = errorNotifier;
   }
 
   /**

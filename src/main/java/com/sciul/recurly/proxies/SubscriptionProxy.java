@@ -1,11 +1,10 @@
-package com.sciul.recurly.service;
+package com.sciul.recurly.proxies;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Service;
 
+import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.helper.BillingHelper;
@@ -16,15 +15,20 @@ import com.sciul.recurly.model.Subscription;
  * 
  * @author GauravChawla
  */
-@Service
-public class SubscriptionService extends AbstractService {
+public class SubscriptionProxy extends AbstractProxy {
+
+  private BillingHelper billingHelper = null;
+
+  /**
+   * @param recurly
+   */
+  SubscriptionProxy(RecurlyConfiguration recurly) {
+    super(recurly);
+    billingHelper = new BillingHelper();
+  }
 
   /** The logger. */
-  private static Logger logger = LoggerFactory.getLogger(SubscriptionService.class);
-
-  /** The billing helper. */
-  @Autowired
-  private BillingHelper billingHelper;
+  private static Logger logger = LoggerFactory.getLogger(SubscriptionProxy.class);
 
   @Override
   public Logger getLogger() {

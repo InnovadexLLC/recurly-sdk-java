@@ -1,10 +1,10 @@
-package com.sciul.recurly.service;
+package com.sciul.recurly.proxies;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Service;
 
+import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.model.AddOn;
@@ -16,11 +16,17 @@ import com.sciul.recurly.model.Plans;
  * 
  * @author GauravChawla
  */
-@Service
-public class PlanService extends AbstractService {
+public class PlanProxy extends AbstractProxy {
+
+  /**
+   * @param recurly
+   */
+  PlanProxy(RecurlyConfiguration recurly) {
+    super(recurly);
+  }
 
   /** The logger. */
-  private static Logger logger = LoggerFactory.getLogger(PlanService.class);
+  private static Logger logger = LoggerFactory.getLogger(PlanProxy.class);
 
   @Override
   public Logger getLogger() {

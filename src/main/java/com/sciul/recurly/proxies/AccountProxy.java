@@ -1,10 +1,10 @@
-package com.sciul.recurly.service;
+package com.sciul.recurly.proxies;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Service;
 
+import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.model.Account;
@@ -18,11 +18,20 @@ import com.sciul.recurly.model.Token;
  * 
  * @author GauravChawla
  */
-@Service
-public class AccountService extends AbstractService {
+public class AccountProxy extends AbstractProxy {
 
   /** The logger. */
-  private static Logger logger = LoggerFactory.getLogger(AccountService.class);
+  private static Logger logger = LoggerFactory.getLogger(AccountProxy.class);
+
+  /**
+   * Instantiates a new account proxy.
+   * 
+   * @param config
+   *          the config
+   */
+  AccountProxy(RecurlyConfiguration config) {
+    super(config);
+  }
 
   @Override
   public Logger getLogger() {
@@ -91,7 +100,7 @@ public class AccountService extends AbstractService {
   }
 
   /**
-   * Get billingInfo
+   * Get billingInfo.
    * 
    * @param accountCode
    *          the account code

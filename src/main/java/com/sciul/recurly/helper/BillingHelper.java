@@ -1,7 +1,5 @@
 package com.sciul.recurly.helper;
 
-import org.springframework.stereotype.Component;
-
 import com.sciul.recurly.model.Account;
 import com.sciul.recurly.model.BypassHostedConfirmation;
 import com.sciul.recurly.model.EUR;
@@ -24,7 +22,6 @@ import com.sciul.recurly.model.UnitAmountInCents;
  * 
  * @author GauravChawla
  */
-@Component
 public class BillingHelper {
 
   /**

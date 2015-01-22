@@ -1,26 +1,36 @@
 /**
  * 
  */
-package com.sciul.recurly.service;
+package com.sciul.recurly.proxies;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Service;
 
+import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.model.Invoice;
 
 /**
- * @author GauravChawla
+ * The Class InvoiceProxy.
  * 
+ * @author GauravChawla
  */
-@Service
-public class InvoiceService extends AbstractService {
+public class InvoiceProxy extends AbstractProxy {
+
+  /**
+   * Instantiates a new invoice proxy.
+   * 
+   * @param recurly
+   *          the recurly
+   */
+  InvoiceProxy(RecurlyConfiguration recurly) {
+    super(recurly);
+  }
 
   /** The logger. */
-  private static Logger logger = LoggerFactory.getLogger(InvoiceService.class);
+  private static Logger logger = LoggerFactory.getLogger(InvoiceProxy.class);
 
   @Override
   public Logger getLogger() {
@@ -34,6 +44,15 @@ public class InvoiceService extends AbstractService {
   // return headers;
   // }
 
+  /**
+   * Gets the invoice.
+   * 
+   * @param invoiceNumber
+   *          the invoice number
+   * @return the invoice
+   * @throws RecurlyException
+   *           the recurly exception
+   */
   public Invoice getInvoice(String invoiceNumber) throws RecurlyException {
     return call(BillingConstants.RecurlyApiPath.V2INVOICES.toString() + "/" + invoiceNumber, null, Invoice.class,
           HttpMethod.GET);

@@ -1,4 +1,4 @@
-package com.sciul.recurly.service;
+package com.sciul.recurly.proxies;
 
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
@@ -12,7 +12,6 @@ import javax.xml.bind.JAXBContext;
 import org.apache.commons.httpclient.URIException;
 import org.apache.commons.httpclient.util.URIUtil;
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -28,15 +27,26 @@ import com.sciul.recurly.helper.BillingConstants;
 import com.sciul.recurly.model.Errors;
 import com.sciul.recurly.model.RecurlyError;
 import com.sciul.recurly.model.RecurlyErrors;
-import com.sciul.sdk.helper.SNSNotification;
-import com.sciul.sdk.model.Payload;
 
 /**
  * The Class AbstractService.
  * 
  * @author GauravChawla
  */
-public abstract class AbstractService {
+public abstract class AbstractProxy {
+
+  /** The recurly. */
+  protected RecurlyConfiguration recurly;
+
+  /**
+   * Instantiates a new abstract proxy.
+   * 
+   * @param recurly
+   *          the recurly
+   */
+  AbstractProxy(RecurlyConfiguration recurly) {
+    this.recurly = recurly;
+  }
 
   /**
    * The logger.
@@ -44,14 +54,6 @@ public abstract class AbstractService {
    * @return the logger
    */
   public abstract Logger getLogger();
-
-  /** The recurly. */
-  @Autowired
-  protected RecurlyConfiguration recurly;
-
-  /** The sns client. */
-  @Autowired
-  private SNSNotification snsClient;
 
   /** The rest template. */
   private static RestTemplate restTemplate = new RestTemplate();
@@ -124,7 +126,7 @@ public abstract class AbstractService {
     } catch (RestClientException e) {
       String err = ((HttpStatusCodeException) e).getResponseBodyAsString();
       int code = ((HttpStatusCodeException) e).getStatusCode().value();
-      publishError(uri, err, code);
+      publishError(uri.toString(), err, code);
       RecurlyException ex = handleError(err, code, e);
       throw ex;
     }
@@ -185,52 +187,42 @@ public abstract class AbstractService {
   }
 
   /**
-   * Publish error via AWS SNS.
+   * Publish error via Notify method passed in.
    * 
-   * @param uri
-   *          the uri
-   * @param err
+   * @param url
+   *          the api path.
+   * @param error
    *          the error
    * @param code
    *          the error http code
    */
-  private void publishError(URI uri, String error, Integer code) {
-    getLogger().error("Recurly API: {} - Error:  {}", uri.toString(), error);
-    if (recurly.getSnsTopic() != null && !recurly.getSnsTopic().isEmpty() && recurly.getAwsTopicRegion() != null
-          && !recurly.getAwsTopicRegion().isEmpty()) {
-      String msgId =
-            snsClient.publish("URL:: " + uri.toString() + " " + error, recurly.getSnsTopic(),
-                  recurly.getAwsTopicRegion(), "Recurly Error: " + code);
-      getLogger().info("Sending Recurly Error via SNS - MessageId: {}", msgId);
-    }
-    if (recurly.getChannel() != null && !recurly.getChannel().equalsIgnoreCase("")) {
-      getLogger().info("Sending Recurly Error via Slack to channel: {}", recurly.getChannel());
-      publishToSlack(error);
-    } else {
-      getLogger().info("Sending Recurly Error via failed for Slack");
+  private void publishError(String url, String error, Integer code) {
+    if (recurly.getErrorNotifier() != null) {
+      recurly.getErrorNotifier().publish(error, code);
+      getLogger().info("Notified Error via publish message.");
     }
   }
 
-  /**
-   * Publish to slack.
-   * 
-   * @param message
-   *          the error message
-   * @throws URIException
-   */
-  private void publishToSlack(String error) {
-    URI uri = null;
-    HttpMethod method = HttpMethod.POST;
-    try {
-      HttpHeaders headers = new HttpHeaders();
-      headers.set("Content-Type", "application/json; charset=utf-8");
-      Payload payload = new Payload(error);
-      HttpEntity<?> entity = new HttpEntity<>(payload, headers);
-      uri = new URI(URIUtil.encodeQuery(recurly.getChannel(), "UTF-8"));
-      getLogger().debug("Calling Slack URL {}, method: {}", uri.toString(), method.toString());
-      restTemplate.exchange(uri, method, entity, void.class);
-    } catch (URIException | URISyntaxException | RestClientException e) {
-      getLogger().error("Calling Slack URL {}, error: {}", uri.toString(), e);
-    }
-  }
+  // /**
+  // * Publish to slack.
+  // *
+  // * @param message
+  // * the error message
+  // * @throws URIException
+  // */
+  // private void publishToSlack(String error) {
+  // URI uri = null;
+  // HttpMethod method = HttpMethod.POST;
+  // try {
+  // HttpHeaders headers = new HttpHeaders();
+  // headers.set("Content-Type", "application/json; charset=utf-8");
+  // Payload payload = new Payload(error);
+  // HttpEntity<?> entity = new HttpEntity<>(payload, headers);
+  // uri = new URI(URIUtil.encodeQuery(recurly.getChannel(), "UTF-8"));
+  // getLogger().debug("Calling Slack URL {}, method: {}", uri.toString(), method.toString());
+  // restTemplate.exchange(uri, method, entity, void.class);
+  // } catch (URIException | URISyntaxException | RestClientException e) {
+  // getLogger().error("Calling Slack URL {}, error: {}", uri.toString(), e);
+  // }
+  // }
 }
