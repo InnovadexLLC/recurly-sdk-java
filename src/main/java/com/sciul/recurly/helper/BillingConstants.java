@@ -21,6 +21,7 @@ public class BillingConstants {
 
   /** The Constant RECURLY_ERRORS. */
   public static final String RECURLY_ERRORS = "<errors>";
+  public static final String RECURLY_TRANSACTION_ERRORS = "<transaction_error>";
 
   /** The Constant RECURLY_ERROR. */
   public static final String RECURLY_ERROR = "<error>";

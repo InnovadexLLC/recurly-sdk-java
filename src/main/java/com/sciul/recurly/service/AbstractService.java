@@ -25,6 +25,7 @@ import org.xml.sax.InputSource;
 import com.sciul.recurly.config.RecurlyConfiguration;
 import com.sciul.recurly.exception.RecurlyException;
 import com.sciul.recurly.helper.BillingConstants;
+import com.sciul.recurly.model.Errors;
 import com.sciul.recurly.model.RecurlyError;
 import com.sciul.recurly.model.RecurlyErrors;
 import com.sciul.sdk.helper.SNSNotification;
@@ -144,7 +145,19 @@ public abstract class AbstractService {
   private RecurlyException handleError(String err, int code, Exception ex) {
     RecurlyErrors errors = null;
     try {
-      if (err.indexOf(BillingConstants.RECURLY_ERRORS) != -1) {
+      if (err.indexOf(BillingConstants.RECURLY_TRANSACTION_ERRORS) != -1) {
+        Errors transactionErrors =
+              (Errors) JAXBContext.newInstance(Errors.class).createUnmarshaller()
+                    .unmarshal(new InputSource(new StringReader(err)));
+        RecurlyError recurlyError = new RecurlyError();
+        recurlyError.setDescription(transactionErrors.getTransactionError().getCustomerMessage());
+        recurlyError.setSymbol(transactionErrors.getTransactionError().getErrorCode());
+        List<RecurlyError> errorList = new ArrayList<RecurlyError>();
+        errorList.add(recurlyError);
+        errors = new RecurlyErrors();
+        errors.setError(errorList);
+      } else if (err.indexOf(BillingConstants.RECURLY_ERRORS) != -1
+            && err.indexOf(BillingConstants.RECURLY_TRANSACTION_ERRORS) == -1) {
         errors =
               (RecurlyErrors) JAXBContext.newInstance(RecurlyErrors.class).createUnmarshaller()
                     .unmarshal(new InputSource(new StringReader(err)));
