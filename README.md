@@ -53,11 +53,6 @@ public RecurlyProxyFactory recurly() {
 development
 ===========
 
-### maven ###
-
-```
-mvn clean install
-```
 
 ### gradle ###
 
