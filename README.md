@@ -1,12 +1,12 @@
-Recurly-sdk-java
-============
+recurly-sdk-java
+================
 
-__Open source java library for Recurly.__
+Open source java library for [Recurly https://recurly.com/] API (version 2). Still WIP.
 
-__Note:: In progress__
+using
+=====
 
-
-__Maven Dependency:__
+## maven dependency
 
 ```
 <dependency>
@@ -16,47 +16,47 @@ __Maven Dependency:__
 </dependency>
 ```
 
-__Gradle Dependency:__
+## gradle dependency
+
 ```
 compile 'com.sciul:recurly-sdk-java:1.0.39-SNAPSHOT'
 ```
 
+code snippet
+============
 
-__Example:__
-```
-public RecurlyProxyFactory recurly() {
-    RecurlyConfiguration rc = new RecurlyConfiguration(apiKey, recurlyServerURL);
-    RecurlyProxyFactory recurlyClient = new RecurlyProxyFactory(rc);
-    return recurlyClient;
-}
-```
+    public RecurlyProxyFactory recurly() {
+      RecurlyConfiguration rc = new RecurlyConfiguration(apiKey, recurlyServerURL);
+      RecurlyProxyFactory recurlyClient = new RecurlyProxyFactory(rc);
+      return recurlyClient;
+    }
+    // apiKey:           API Credentials (Recurly private API key)
+    // recurlyServerURL: Recurly custom API url. (Site Settings under company name).
 
-apiKey:           API Credentials (Recurly private API key)
+Optionally, you can also implement a *Notifier* interface for publishing errors. 
 
-recurlyServerURL: Recurly custom API url. (Site Settings under company name).
-
-__Optional:__
-
-You can also implement Notifier interface publish method. Code will call publish method if any error occurred.
-
-Example with NotifierImpl class:
+Updated example with NotifierImpl class:
 
 ```
 public RecurlyProxyFactory recurly() {
-    NotifierImpl notifier = new NotifierImpl();
+    Notifier notifier = new NotifierImpl();
     RecurlyConfiguration rc = new RecurlyConfiguration(apiKey, recurlyServerURL, notifier);
     RecurlyProxyFactory recurlyClient = new RecurlyProxyFactory(rc);
     return recurlyClient;
 }
 ```
-__Build__
 
-Maven:
+development
+===========
+
+## maven
+
 ```
 mvn clean install
 ```
 
-Gradle:
+## gradle:
+
 ```
 gradle clean build
 ```
