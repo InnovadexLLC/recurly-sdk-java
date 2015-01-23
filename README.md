@@ -1,7 +1,11 @@
 recurly-sdk-java
 ================
 
-Open source java library for [Recurly https://recurly.com/] API (version 2). Still WIP.
+Open source java library for [Recurly https://recurly.com/] API (version 2). 
+
+## status ##
+
+Still under development. `read as NOT READY!`
 
 using
 =====
