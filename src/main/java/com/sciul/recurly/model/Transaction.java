@@ -25,6 +25,9 @@ public class Transaction {
   @XmlElement
   private Invoice invoice;
 
+  @XmlElement(name = "invoice_number")
+  protected int invoiceNumber;
+
   /** The subscription. */
   @XmlElement
   private Subscription subscription;
@@ -339,6 +342,14 @@ public class Transaction {
 
   public void setChargeAccountinCode(String chargeAccountinCode) {
     this.chargeAccountinCode = chargeAccountinCode;
+  }
+
+  public int getInvoiceNumber() {
+    return invoiceNumber;
+  }
+
+  public void setInvoiceNumber(int invoiceNumber) {
+    this.invoiceNumber = invoiceNumber;
   }
 
 }
