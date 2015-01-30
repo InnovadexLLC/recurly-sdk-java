@@ -27,18 +27,12 @@ repositories {
       maven {
         url "http://repo.spring.io/libs-snapshot"
       }
-      maven {
-          url "https://nexus.sciul.com/nexus/content/groups/public"
-      }
 }
 
 buildscript {
    repositories {
       mavenCentral()
-      
-       
    }
-   
    dependencies {
       classpath 'com.github.townsfolk:gradle-release:1.2'
    }
@@ -46,16 +40,6 @@ buildscript {
 apply plugin: 'release'
 
 dependencies {
-    def sdk = files('$buildDir/../../sci-sdk-java/build/libs/sci-sdk-java-0.0.0-SNAPSHOT.jar')
-    sdk.each { file ->
-        if (!file.exists()) {
-            println 'Getting the SDK jar from CENTRAL Repo.'
-            compile 'com.sciul:sci-sdk-java:2.0.0'
-        }else{
-           println 'Getting the SDK jar from LOCAL Repo.'
-           compile sdk
-        }
-    }
     
     compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
     compile 'commons-httpclient:commons-httpclient:3.1' 
@@ -142,15 +126,63 @@ test {
 }
 
 
+
 uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "${nexusUrl}/content/repositories/releases") {
+	repositories {
+		mavenDeployer {
+			beforeDeployment { 
+			     MavenDeployment deployment -> signing.signPom(deployment) 
+			}
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+			     authentication(userName: sonatypeUsername, password: sonatypePassword)
+			}
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
-            snapshotRepository(url: "${nexusUrl}/content/repositories/snapshots") {
-                authentication(userName: nexusUsername, password: nexusPassword)
-            }
-        }
-    }
+			pom.project {
+				name 'recurly-sdk-java'
+				packaging 'jar'
+				description 'SDK Classes to build Recurly Java app.'
+				url 'https://github.com/ulini/recurly-sdk-java'
+				scm {
+					url 'scm:git@github.com:ulini/recurly-sdk-java.git'
+					connection 'scm:git@github.com:ulini/recurly-sdk-java.git'
+					developerConnection 'scm:git@github.com:ulini/recurly-sdk-java.git'
+				}
+				licenses {
+					license {
+						name 'The Apache Software License, Version 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+						distribution 'repo'
+					}
+				}
+				developers {
+					developer {
+						id 'SR'
+						name 'sr'
+					}
+					developer {
+						id 'GC'
+						name 'gc'
+					}
+					developer {
+						id 'SB'
+						name 'sb'
+					}
+					developer {
+						id 'PM'
+						name 'pm'
+					}
+					developer {
+						id 'LK'
+						name 'lk'
+					}
+					developer {
+						id 'GS'
+						name 'gs'
+					}
+				}
+			}
+		}
+	}
 }
