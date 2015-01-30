@@ -145,60 +145,12 @@ test {
 uploadArchives {
     repositories {
         mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
-              authentication(userName: sonatypeUsername, password: sonatypePassword)
+            repository(url: "${nexusUrl}/content/repositories/releases") {
+                authentication(userName: nexusUsername, password: nexusPassword)
             }
-
-            pom.project {
-               name 'recurly-sdk-java'
-               packaging 'jar'
-               description 'SDK Classes to build Recurly Java app.'
-               url 'https://github.com/ulini/recurly-sdk-java'
-
-               scm {
-                   url 'scm:git@github.com:ulini/recurly-sdk-java.git'
-                   connection 'scm:git@github.com:ulini/recurly-sdk-java.git'
-                   developerConnection 'scm:git@github.com:ulini/recurly-sdk-java.git'
-               }
-
-               licenses {
-                   license {
-                       name 'The Apache Software License, Version 2.0'
-                       url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                       distribution 'repo'
-                   }
-               }
-
-               developers {
-                   developer {
-                       id 'SR'
-                       name 'sr'
-                   }
-                   developer {
-                       id 'GC'
-                       name 'gc'
-                   }
-                   developer {
-                       id 'SB'
-                       name 'sb'
-                   }
-                   developer {
-                       id 'PM'
-                       name 'pm'
-                   }
-                   developer {
-                       id 'LK'
-                       name 'lk'
-                   }
-                   developer {
-                       id 'GS'
-                       name 'gs'
-                   }
-               }
-           }
+            snapshotRepository(url: "${nexusUrl}/content/repositories/snapshots") {
+                authentication(userName: nexusUsername, password: nexusPassword)
+            }
         }
     }
 }
-
