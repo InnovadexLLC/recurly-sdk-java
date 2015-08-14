@@ -28,7 +28,7 @@ repositories {
         url "http://repo.spring.io/libs-snapshot"
       }
       maven {
-       url "https://nexus.sciul.com/nexus/content/groups/public"
+       url "https://nexus.sciul.com/content/groups/public"
       }
 }
 
